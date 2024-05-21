@@ -18,6 +18,21 @@ When talking to Prof.Fu it was stressed this **needs** to be a C++ application.
 4) C++ WinForm application
    1) [Directory](https://learn.microsoft.com/en-us/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp?view=msvc-170)
 
+## Todo
+
+* [x] Hello World Type of Example
+* [x] Create Process Functionality
+  * [x] Test Startup
+  * [ ] Test Stop
+    * Note: Seems to not be storing the Process Information properly as a dynamically allocated pointer. 
+* [x] Pipe Functionality
+  * [ ] Create Test Child Executable
+  * [ ] Test Read
+  * [ ] Test Write
+* [ ] Create Event For Signaling Successful Read
+  * [ ] Test Read From Pipe
+  * [ ] Test Write to Pipe
+* [ ] Create Thread for reading from Pipe
 ## Visual Studio Setup
 1) Install [Visual Studio](https://visualstudio.microsoft.com/) 
 2) Install the [Desktop Development With C++](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170#:~:text=For%20core%20C%20and%20C%2B%2B%20support%2C)
@@ -99,6 +114,11 @@ I could always add a mutex, but inheriting the class and firing off an event is 
 https://stackoverflow.com/questions/1231774/why-public-ref-in-c-class-definition
 
 ## Server Manager Code
+https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
+https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
+https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-formatmessage
+https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-process_information
+https://learn.microsoft.com/en-us/windows/win32/ipc/anonymous-pipe-operations
 
 ## Ref: 
 Classic: https://stackoverflow.com/questions/12537456/how-to-append-text-to-a-textbox
