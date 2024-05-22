@@ -23,16 +23,15 @@ When talking to Prof.Fu it was stressed this **needs** to be a C++ application.
 * [x] Hello World Type of Example
 * [x] Create Process Functionality
   * [x] Test Startup
-  * [ ] Test Stop
-    * Note: Seems to not be storing the Process Information properly as a dynamically allocated pointer. 
+  * [x] Test Stop
 * [x] Pipe Functionality
-  * [ ] Create Test Child Executable
+  * [x] Create Test Child Executable
   * [ ] Test Read
   * [ ] Test Write
 * [ ] Create Event For Signaling Successful Read
   * [ ] Test Read From Pipe
   * [ ] Test Write to Pipe
-* [ ] Create Thread for reading from Pipe
+* [x] Create Thread for reading from Pipe
 ## Visual Studio Setup
 1) Install [Visual Studio](https://visualstudio.microsoft.com/) 
 2) Install the [Desktop Development With C++](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170#:~:text=For%20core%20C%20and%20C%2B%2B%20support%2C)
@@ -120,5 +119,9 @@ https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-formatmes
 https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-process_information
 https://learn.microsoft.com/en-us/windows/win32/ipc/anonymous-pipe-operations
 
+
+Thread:
+https://learn.microsoft.com/en-us/dotnet/standard/threading/destroying-threads
+https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread?view=net-8.0
 ## Ref: 
 Classic: https://stackoverflow.com/questions/12537456/how-to-append-text-to-a-textbox

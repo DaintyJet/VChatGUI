@@ -78,9 +78,7 @@ int server_manage::ServerManager::initPipes() {
 		return -1;
 	}
 
-		
 	return 1;
-
 }
 
 /*
@@ -97,8 +95,9 @@ int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 	wchar_t* convt_cmd;
 
 	// Setup convt_cmd so we send over a WideChar Str
-	convt_cmd = (wchar_t*)malloc(sizeof(wchar_t)* strlen(cmd));
-	mbstowcs(convt_cmd, cmd, strlen(cmd) + 1);//Plus null
+	//convt_cmd = (wchar_t*)malloc(sizeof(wchar_t)* strlen(cmd)); // Attempting to free causes heap errors?
+	convt_cmd = new wchar_t[strlen(cmd)];
+	mbstowcs(convt_cmd, cmd, strlen(cmd) + 1); //Plus null
 
 
 	// Set up members of the PROCESS_INFORMATION structure. 
@@ -124,6 +123,7 @@ int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 		&siStartInfo,  // STARTUPINFO pointer 
 		&(server_proc));  // receives PROCESS_INFORMATION 
 
+	std::cout << server_proc.dwProcessId << "\n"; // Temp for Testing
 
 	// If an error occurs, exit the application. 
 	if (bSuccess == FALSE) {
@@ -131,29 +131,52 @@ int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 		std::cout << "\nFAILED\n";
 		return -1;
 	}
-	else
-	{
 
-		// Close handles to the child process and its primary thread.
-		// Some applications might keep these handles to monitor the status
-		// of the child process, for example. 
-		// CloseHandle((*(this->server_proc)).hProcess);
-		// CloseHandle((*(this->server_proc)).hThread);
-
-		// Close handles to the stdin and stdout pipes no longer needed by the child process.
-		// If they are not explicitly closed, there is no way to recognize that the child process has ended.
-		CloseHandle(this->g_hChildStd_OUT_Wr);
-		CloseHandle(this->g_hChildStd_IN_Rd);
-	}
-
-	//TerminateProcess((this->server_proc)->hProcess, 0);
+	// Close handles to the stdin and stdout pipes no longer needed by the child process.
+	// If they are not explicitly closed, there is no way to recognize that the child process has ended.
+	CloseHandle(this->g_hChildStd_OUT_Wr);
+	g_hChildStd_OUT_Wr = NULL;
+	CloseHandle(this->g_hChildStd_IN_Rd);
+	g_hChildStd_IN_Rd = NULL;
+	
 	return 1;
 
 }
 
+/*
+* Purpose 
+* 
+* Return: -1 if error, o.w number of successfully read bytes.
+* 
+* Based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
+*/
+int server_manage::ServerManager::serverRead(char *buffObj, DWORD size) {
+	DWORD dwRead;
+	if (this->g_hChildStd_OUT_Rd == NULL) 
+		return -1;
+
+	if (ReadFile(this->g_hChildStd_OUT_Rd, buffObj, size, &dwRead, NULL) == 0)
+		return -1;
+
+	return dwRead;
+}
+
 int server_manage::ServerManager::killServer() {
 
-	if (this->isStarted)
-		return TerminateProcess((this->server_proc).hProcess, 0);
-	return 1;
+	uint16_t ret;
+
+	if (this->isStarted == 0)
+		return 1;
+	
+	// Terminate the process, ensure it is not blocking the 
+	// Listening Thread
+	ret = TerminateProcess((this->server_proc).hProcess, 0);
+
+	// Close handles that have not already been closed
+	if (g_hChildStd_OUT_Rd != NULL)
+		CloseHandle(this->g_hChildStd_OUT_Rd);
+	if (g_hChildStd_IN_Wr != NULL)
+		CloseHandle(this->g_hChildStd_IN_Wr);
+
+	return ret;
 }

@@ -1,7 +1,12 @@
 #pragma once
 #include <iostream>
 #include <process.h> 
+#include <exception>
 #include "ServerManager.h"
+
+// Define Buffer Size
+#define BUFFSIZE 4096
+
 namespace VChatGUI {
 
 
@@ -25,6 +30,8 @@ namespace VChatGUI {
 			//
 			//TODO: Add the constructor code here
 			//
+			this->serv_h = (server_manage::ServerManager*)new server_manage::ServerManager(9999);
+
 		}
 
 	protected:
@@ -37,15 +44,22 @@ namespace VChatGUI {
 			{
 				delete components;
 			}
+			
+			// If the server is running we need to kill it
+			if (this->serv_h != nullptr && this->serv_h->get_isStarted() == 1) 
+				this->serv_h->killServer();
+			
+			// Clean up allocated resources
+			delete this->serv_h;
+			this->serv_h = nullptr; // Not necsissary but paranoia is good sometimes. In this case unlikely.
 		}
-	public: server_manage::ServerManager*serv_h;
+
+	protected: server_manage::ServerManager *serv_h; // Pointer to obj because it is unmanaged
+	private: System::Threading::Thread^ t_handle; // Managaed Thread Object
 	private: System::Windows::Forms::Button^ Start_Button;
 	private: System::Windows::Forms::Label^ Hello_Label;
 	private: System::Windows::Forms::TextBox^ VChatOut;
-	protected: bool isStarted = 0; // Bool to determine if the server has been started. This is always set to false when we intialize
-
 	private: System::Windows::Forms::Button^ Stop_Button;
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -125,34 +139,73 @@ namespace VChatGUI {
 
 		}
 #pragma endregion
-
+	public: System::Void Server_Lisener(Object^ p) {
+		std::cout << "Test\n";
+		char buff[BUFFSIZE];
+		
+		// Catch any exceptions thrown by killing the processes we are 
+		// trying to read from
+		try {
+			while (1) {
+				if (this->serv_h->serverRead(buff, BUFFSIZE) == -1) {
+					std::cout << GetLastError() << "\n";
+					break;
+				}
+				std::cout << buff << "\n";
+			}
+		}
+		// System::Threading::ThreadInterruptedException^
+		catch (...) {
+			return;
+		}
+	}
 
 	private: System::Void Start_Button_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (this->isStarted)
-				return;
-			// Init Server Comp // For whatever unknown reason if this is placed inside of some other function it fails
-			this->serv_h = (server_manage::ServerManager*)malloc(sizeof(server_manage::ServerManager));
-			*(this->serv_h) = server_manage::ServerManager(9999);
 			
-
+			// If the server pointer has been allocated, and the server is started 
+			if (serv_h != nullptr && this->serv_h->get_isStarted())
+				return;
+			
+			// Notify Useer we are starting the server
 			this->VChatOut->AppendText("Starting Server\r\n");
 			Hello_Label->Text = "Hello World 2";
 
-			this->serv_h->initPipes();
-			if (this->serv_h->CreateServerProcess("C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe") == -1) {
-				//MessageBox(NULL, (LPCTSTR)lpDisplayBuf, TEXT("Error"), MB_OK);
+
+			if (this->serv_h->initPipes() == -1) {
+				this->VChatOut->AppendText("Failed to Create Unnamed Pipes\r\n");
+				return;
 			}
-			this->isStarted = 1;
+
+			if (this->serv_h->CreateServerProcess("C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe") == -1) {
+				this->VChatOut->AppendText("Failed to Create Child Process\r\n");
+				return;
+			}
+
+			// Start Listener
+			this->t_handle = gcnew System::Threading::Thread(gcnew System::Threading::ParameterizedThreadStart(this, &VChatGUI::Server_Lisener));
+			this->t_handle->Start(10);
+
+			// Set Started Tracker
+			this->serv_h->set_isStarted(1);
 	}
 	private: System::Void Stop_Button_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (!isStarted)
+			
+			// Only allow killing the server if it has been started. 
+			if (!this->serv_h->get_isStarted())
 				return;
+			
+			//std::cout << this->serv_h->killServer() << "\n" << GetLastError() << "\n";
+			
+			// Kill Server
+			this->t_handle->Abort(); // Abort since there is not much cleanup we do. This is illadvised.
+			this->serv_h->killServer();
+			this->serv_h->set_isStarted(0);
+
+
+			// Display that we are killing/killed the server 
 			this->VChatOut->AppendText("Killing Server\r\n");
 
 			std::cout << "Killing Server" << "\n";
-			std::cout << this->serv_h->killServer() << "\n" << GetLastError() << "\n";
-			//
-			this->isStarted = 0;
 		}
 	}; // Class End
 } // Namespace end

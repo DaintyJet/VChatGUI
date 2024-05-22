@@ -25,6 +25,8 @@ namespace server_manage {
 
 		}
 
+		void set_isStarted(bool val) { isStarted = val; }
+
 		bool get_isStarted();
 
 		/*
@@ -43,9 +45,15 @@ namespace server_manage {
 
 		int killServer();
 
+		int serverRead(char *buffObj, DWORD size);
+
 		~ServerManager() {
+			if (isStarted == 0)
+				return;
+			
 			this->killServer();
-			free(lpMsgBuf);
+			//if (this->lpMsgBuf != NULL)
+				//free(this->lpMsgBuf);
 		}
 	};
 
