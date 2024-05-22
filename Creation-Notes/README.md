@@ -29,8 +29,8 @@ When talking to Prof.Fu it was stressed this **needs** to be a C++ application.
   * [x] Test Read
     * This needed to use an explicit call to `WriteFile(hStdout, buff, strlen(buff), &dwWritten, NULL);` for it to work, Need to look into a workaround.
   * [ ] Test Write
-* [ ] Create Event For Signaling Successful Read
-  * [ ] Test Read From Pipe
+* [X] Create Mutex For Sync
+  * [X] Test Read From Pipe
   * [ ] Test Write to Pipe
 * [x] Create Thread for reading from Pipe
 ## Visual Studio Setup

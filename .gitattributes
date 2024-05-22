@@ -1,0 +1,2 @@
+SRC/VChat_CX/.vs/VChat_CX/v17/ipch/74468c20a1c10b45.ipch filter=lfs diff=lfs merge=lfs -text
+*.db filter=lfs diff=lfs merge=lfs -text

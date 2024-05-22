@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <process.h> 
+#include <process.h>
 #include <exception>
 #include "ServerManager.h"
 
@@ -108,14 +108,15 @@ namespace VChatGUI {
 			this->VChatOut->Multiline = true;
 			this->VChatOut->Name = L"VChatOut";
 			this->VChatOut->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->VChatOut->Size = System::Drawing::Size(1870, 274);
+			this->VChatOut->Size = System::Drawing::Size(980, 274);
 			this->VChatOut->TabIndex = 2;
 			// 
 			// Stop_Button
 			// 
-			this->Stop_Button->Location = System::Drawing::Point(233, 759);
+			this->Stop_Button->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->Stop_Button->Location = System::Drawing::Point(199, 777);
 			this->Stop_Button->Name = L"Stop_Button";
-			this->Stop_Button->Size = System::Drawing::Size(214, 94);
+			this->Stop_Button->Size = System::Drawing::Size(162, 76);
 			this->Stop_Button->TabIndex = 4;
 			this->Stop_Button->Text = L"Stop-Server";
 			this->Stop_Button->UseVisualStyleBackColor = true;
@@ -126,7 +127,7 @@ namespace VChatGUI {
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(1869, 865);
+			this->ClientSize = System::Drawing::Size(979, 865);
 			this->Controls->Add(this->Stop_Button);
 			this->Controls->Add(this->VChatOut);
 			this->Controls->Add(this->Hello_Label);
