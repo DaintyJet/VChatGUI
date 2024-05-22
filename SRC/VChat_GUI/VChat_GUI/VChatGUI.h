@@ -31,7 +31,6 @@ namespace VChatGUI {
 			//TODO: Add the constructor code here
 			//
 			this->serv_h = (server_manage::ServerManager*)new server_manage::ServerManager(9999);
-
 		}
 
 	protected:
@@ -54,8 +53,9 @@ namespace VChatGUI {
 			this->serv_h = nullptr; // Not necsissary but paranoia is good sometimes. In this case unlikely.
 		}
 
-	protected: server_manage::ServerManager *serv_h; // Pointer to obj because it is unmanaged
+	private: server_manage::ServerManager *serv_h; // Pointer to obj because it is unmanaged
 	private: System::Threading::Thread^ t_handle; // Managaed Thread Object
+	private: System::Threading::Mutex^ t_mutex; // Managaed Mutex Object Object
 	private: System::Windows::Forms::Button^ Start_Button;
 	private: System::Windows::Forms::Label^ Hello_Label;
 	private: System::Windows::Forms::TextBox^ VChatOut;
@@ -152,22 +152,49 @@ namespace VChatGUI {
 					break;
 				}
 				std::cout << buff << "\n";
+				System::String^ converted = gcnew System::String(buff);
+				Write_Text_Box_Block(converted);
 			}
 		}
 		// System::Threading::ThreadInterruptedException^
 		catch (...) {
+			
 			return;
 		}
 	}
 
+	private: System::Void Write_Text_Box_Block(System::String^ textBlock) {
+		t_mutex->WaitOne();
+		this->VChatOut->AppendText(textBlock);
+		t_mutex->ReleaseMutex();
+		return;
+	}
+
+	private: System::Void Write_Text_Box_Timed(System::String^ textBlock) {
+		bool chk = 0;
+		
+		chk = t_mutex->WaitOne(1000);
+
+		this->VChatOut->AppendText(textBlock);
+		
+		if(chk == 1)
+			t_mutex->ReleaseMutex();
+
+		return;
+
+	}
 	private: System::Void Start_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 			
 			// If the server pointer has been allocated, and the server is started 
 			if (serv_h != nullptr && this->serv_h->get_isStarted())
 				return;
 			
+			// To prevent any conditions where the thread is killed in the middle of a mutex operation, we create a new one once we start a server 
+			this->t_mutex = gcnew System::Threading::Mutex();
+
+
 			// Notify Useer we are starting the server
-			this->VChatOut->AppendText("Starting Server\r\n");
+			this->Write_Text_Box_Block("Starting Server\r\n");
 			Hello_Label->Text = "Hello World 2";
 
 
@@ -187,6 +214,8 @@ namespace VChatGUI {
 
 			// Set Started Tracker
 			this->serv_h->set_isStarted(1);
+
+			return;
 	}
 	private: System::Void Stop_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 			
@@ -197,15 +226,20 @@ namespace VChatGUI {
 			//std::cout << this->serv_h->killServer() << "\n" << GetLastError() << "\n";
 			
 			// Kill Server
-			this->t_handle->Abort(); // Abort since there is not much cleanup we do. This is illadvised.
+			this->t_handle->Interrupt(); // Abort since there is not much cleanup we do. This is illadvised.
 			this->serv_h->killServer();
 			this->serv_h->set_isStarted(0);
 
 
 			// Display that we are killing/killed the server 
-			this->VChatOut->AppendText("Killing Server\r\n");
+			this->Write_Text_Box_Timed("Killing Server\r\n");
 
+			// We kill out 
 			std::cout << "Killing Server" << "\n";
+
+			delete this->t_mutex;
+			return;
+
 		}
 	}; // Class End
 } // Namespace end
