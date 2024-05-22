@@ -26,7 +26,8 @@ When talking to Prof.Fu it was stressed this **needs** to be a C++ application.
   * [x] Test Stop
 * [x] Pipe Functionality
   * [x] Create Test Child Executable
-  * [ ] Test Read
+  * [x] Test Read
+    * This needed to use an explicit call to `WriteFile(hStdout, buff, strlen(buff), &dwWritten, NULL);` for it to work, Need to look into a workaround.
   * [ ] Test Write
 * [ ] Create Event For Signaling Successful Read
   * [ ] Test Read From Pipe
