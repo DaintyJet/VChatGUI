@@ -1,7 +1,7 @@
 # Notes on Creation and Management
 This folder contains notes used, and made when creating the VChat GUI program.
 
-There are two avenues of developing the VChat GUI program. The first is creating the GUI application as a C++ program with [WinRT/Win GUI API 2](https://learn.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and using C# (C-Sharp) as a Universal Windows Application, or more likely a WPF program.
+There are two avenues of developing the VChat GUI program. The first is creating the GUI application as a C++ program with [WinRT/Win GUI API 2](https://learn.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and using C# (C-Sharp) as a Universal Windows Application, or more likely a WPF program. A overview of all frameworks can be found on [Microsoft's Website](https://learn.microsoft.com/en-us/windows/apps/get-started/?tabs=cpp-win32%2Cnet-maui#app-development-framework-feature-comparison).
 
 When talking to Prof.Fu it was stressed this **needs** to be a C++ application.
 
@@ -33,7 +33,58 @@ When talking to Prof.Fu it was stressed this **needs** to be a C++ application.
   * [X] Test Read From Pipe
   * [ ] Test Write to Pipe
 * [x] Create Thread for reading from Pipe
-## Visual Studio Setup
+
+## Visual Studio Setup WinUI 3
+A useful tool due to the lack of a visual designer will be the [WinUI 3 Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc?hl=en-us&gl=US)
+
+1) Install [Visual Studio](https://visualstudio.microsoft.com/)
+2) Install the [Desktop Development With C++](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170#:~:text=For%20core%20C%20and%20C%2B%2B%20support%2C)
+
+   <img src="Images/DDC.png">
+
+3. Install WinUI Templates at the bottom of the Optional Section
+
+   <img src="Images/Template-Install.png">
+
+4. Create an [*Unpackaged*](https://learn.microsoft.com/en-us/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app) WinUI Project. This is so we can have full access to the system without running in a sandboxed environment.
+
+### Create Unpackaged Project
+1. Create a WinUI3 packaged project, we will modify the `.vcxproj` file to make it unpackaged.
+2. Install [Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads).
+3. Install [Microsoft Visual C++ Redistributabl](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+4. Create a New WinUI Project, select *Blank App, Packaged (WinUI 3 in Desktop) project template*
+
+5. Add the following to your `.vcxproj` file
+   ```
+   <Project ...>
+   ...
+   <PropertyGroup>
+      ...
+      <WindowsPackageType>None</WindowsPackageType>
+      ...
+   </PropertyGroup> 
+   ...
+   </Project>
+   ```
+5. Add the following to your `.vcxproj` file
+   ```
+   <Project ...>
+   ...
+   <PropertyGroup Label="Globals">
+      ...
+      <AppxPackage>false</AppxPackage>
+      ...
+   </PropertyGroup> 
+   ...
+   </Project>
+   ```
+6. Build and run
+
+> [!NOTE]
+> You must have the required DLLs for the C++ WinUI3 executable installed on the target system
+
+
+## Visual Studio Setup WinForm
 1) Install [Visual Studio](https://visualstudio.microsoft.com/) 
 2) Install the [Desktop Development With C++](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170#:~:text=For%20core%20C%20and%20C%2B%2B%20support%2C)
 

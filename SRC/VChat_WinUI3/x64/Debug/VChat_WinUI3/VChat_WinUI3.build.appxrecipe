@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>UMASS-29B99Y3</Machine>
+    <WindowsUser>Matthew_Harper</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>a2b43248-57c6-43b7-b6c1-ab2cb285c32a</PackageIdentityName>
+    <PackageIdentityPublisher>CN=Matthew_Harper</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\x64\Debug\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath></PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\AppX</LayoutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\VChat_WinUI3.exe">
+      <PackagePath>VChat_WinUI3.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
+      <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Generated Files\App.xbf">
+      <PackagePath>VChat_WinUI3\App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Generated Files\MainWindow.xbf">
+      <PackagePath>VChat_WinUI3\MainWindow.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>VChat_WinUI3\Assets\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\SplashScreen.scale-200.png">
+      <PackagePath>VChat_WinUI3\Assets\SplashScreen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>VChat_WinUI3\Assets\Square150x150Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>VChat_WinUI3\Assets\Square44x44Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>VChat_WinUI3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\StoreLogo.png">
+      <PackagePath>VChat_WinUI3\Assets\StoreLogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>VChat_WinUI3\Assets\Wide310x150Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\VChat_WinUI3.winmd">
+      <PackagePath>VChat_WinUI3.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.22621.0\Redist\Debug\x64\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.119.156.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.119.156.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.119.156.0</Version>
+      <Architecture>win32</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.119.156.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.119.156.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.119.156.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.119.156.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.119.156.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>ARM64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug.UWPDesktop</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug.UWPDesktop, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.Desktop.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug.UWPDesktop</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>ARM64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug.UWPDesktop, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.Desktop.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug.UWPDesktop</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug.UWPDesktop, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.Desktop.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug.UWPDesktop</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug.UWPDesktop, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.Desktop.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

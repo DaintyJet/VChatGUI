@@ -1,1 +1,0 @@
-C:\Local-Git\VChatGUI\SRC\VChat_CX\VChat_CX\VChat_CX.vcxproj;x64
