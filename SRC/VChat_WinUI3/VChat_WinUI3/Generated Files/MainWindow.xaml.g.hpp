@@ -42,15 +42,40 @@ namespace winrt::VChat_WinUI3::implementation
         {
         case 2:
             {
+                auto targetElement = target.as<::winrt::Microsoft::UI::Xaml::Controls::TextBlock>();
+                this->greetingOutput(targetElement);
+            }
+            break;
+        case 3:
+            {
                 auto targetElement = target.as<::winrt::Microsoft::UI::Xaml::Controls::Button>();
-                this->myButton(targetElement);
+                this->Start_Button(targetElement);
                 auto weakThis = ::winrt::make_weak<class_type>(*this);
                 targetElement.Click([weakThis](::winrt::Windows::Foundation::IInspectable const& p0, ::winrt::Microsoft::UI::Xaml::RoutedEventArgs const& p1){
                     if (auto t = weakThis.get())
                     {
-                        ::winrt::get_self<D>(t)->myButton_Click(p0, p1);
+                        ::winrt::get_self<D>(t)->Start_Button_Click(p0, p1);
                     }
                 });
+            }
+            break;
+        case 4:
+            {
+                auto targetElement = target.as<::winrt::Microsoft::UI::Xaml::Controls::Button>();
+                this->Stop_Button(targetElement);
+                auto weakThis = ::winrt::make_weak<class_type>(*this);
+                targetElement.Click([weakThis](::winrt::Windows::Foundation::IInspectable const& p0, ::winrt::Microsoft::UI::Xaml::RoutedEventArgs const& p1){
+                    if (auto t = weakThis.get())
+                    {
+                        ::winrt::get_self<D>(t)->Stop_Button_Click(p0, p1);
+                    }
+                });
+            }
+            break;
+        case 5:
+            {
+                auto targetElement = target.as<::winrt::Microsoft::UI::Xaml::Controls::TextBox>();
+                this->VChatOutput(targetElement);
             }
             break;
         }

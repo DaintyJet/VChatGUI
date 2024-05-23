@@ -39,5 +39,6 @@ namespace winrt::VChat_WinUI3::implementation
     {
         window = make<MainWindow>();
         window.Activate();
+        
     }
 }

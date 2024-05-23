@@ -3,8 +3,43 @@
   "WorkspaceRootPath": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VChat_WinUI3\\MainWindow.xaml.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\LOCAL-GIT\\VCHATGUI\\SRC\\VCHAT_WINUI3\\VCHAT_WINUI3\\GENERATED FILES\\MAINWINDOW.XAML.G.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VCHAT_WINUI3\\GENERATED FILES\\MAINWINDOW.XAML.G.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\ServerManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VChat_WinUI3\\ServerManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\LOCAL-GIT\\VCHATGUI\\SRC\\VCHAT_WINUI3\\VCHAT_WINUI3\\GENERATED FILES\\WINRT\\BASE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VCHAT_WINUI3\\GENERATED FILES\\WINRT\\BASE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VChat_WinUI3\\MainWindow.xaml.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.40.33807\\INCLUDE\\THREAD||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VChat_WinUI3\\MainWindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\App.xaml.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VChat_WinUI3\\App.xaml.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\App.xaml.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VChat_WinUI3\\App.xaml.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\Generated Files\\module.g.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|solutionrelative:VChat_WinUI3\\Generated Files\\module.g.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25BE50F1-2B44-4D7F-BDC6-395488CB6FAD}|VChat_WinUI3\\VChat_WinUI3.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -26,11 +61,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "thread",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\include\\thread",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\include\\thread",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\include\\thread",
+              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\include\\thread",
+              "ViewState": "AQIAAMgAAAAAAAAAAAAQwDsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-23T20:38:00.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServerManager.h",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\ServerManager.h",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\ServerManager.h",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\ServerManager.h",
+              "RelativeToolTip": "VChat_WinUI3\\ServerManager.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAQwBgAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-23T20:04:41.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "base.h",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\Generated Files\\winrt\\base.h",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\Generated Files\\winrt\\base.h",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\Generated Files\\winrt\\base.h",
+              "RelativeToolTip": "VChat_WinUI3\\Generated Files\\winrt\\base.h",
+              "ViewState": "AQIAAEkTAAAAAAAAAAAewF4TAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-23T20:04:37.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "module.g.cpp",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\Generated Files\\module.g.cpp",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\Generated Files\\module.g.cpp",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\Generated Files\\module.g.cpp",
+              "RelativeToolTip": "VChat_WinUI3\\Generated Files\\module.g.cpp",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAABYAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-23T19:32:07.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.xaml.h",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\App.xaml.h",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\App.xaml.h",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\App.xaml.h",
+              "RelativeToolTip": "VChat_WinUI3\\App.xaml.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-23T19:01:57.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml.cpp",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\App.xaml.cpp",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\App.xaml.cpp",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\App.xaml.cpp",
+              "RelativeToolTip": "VChat_WinUI3\\App.xaml.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-23T18:48:04.167Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.g.hpp",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\Generated Files\\MainWindow.xaml.g.hpp",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\Generated Files\\MainWindow.xaml.g.hpp",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\Generated Files\\MainWindow.xaml.g.hpp",
+              "RelativeToolTip": "VChat_WinUI3\\Generated Files\\MainWindow.xaml.g.hpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-23T18:40:29.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cpp",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml.cpp",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\MainWindow.xaml.cpp",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml.cpp",
+              "RelativeToolTip": "VChat_WinUI3\\MainWindow.xaml.cpp",
+              "ViewState": "AQIAABgAAAAAAAAAAAAQwC4AAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-23T18:37:01.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.h",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml.h",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\MainWindow.xaml.h",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml.h",
+              "RelativeToolTip": "VChat_WinUI3\\MainWindow.xaml.h",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACYAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-23T18:34:45.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "VChat_WinUI3\\MainWindow.xaml",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml",
+              "RelativeToolTip": "VChat_WinUI3\\MainWindow.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-23T14:50:00.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "app.manifest",
               "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\app.manifest",
               "RelativeDocumentMoniker": "VChat_WinUI3\\app.manifest",
@@ -43,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "readme.txt",
               "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\readme.txt",
               "RelativeDocumentMoniker": "VChat_WinUI3\\readme.txt",
@@ -51,11 +224,12 @@
               "RelativeToolTip": "VChat_WinUI3\\readme.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-05-23T14:53:18.317Z"
+              "WhenOpened": "2024-05-23T14:53:18.317Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\App.xaml",
               "RelativeDocumentMoniker": "VChat_WinUI3\\App.xaml",
@@ -63,19 +237,7 @@
               "RelativeToolTip": "VChat_WinUI3\\App.xaml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T14:50:05.714Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "VChat_WinUI3\\MainWindow.xaml",
-              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_WinUI3\\VChat_WinUI3\\MainWindow.xaml",
-              "RelativeToolTip": "VChat_WinUI3\\MainWindow.xaml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T14:50:00.941Z",
+              "WhenOpened": "2024-05-23T14:50:05.714Z",
               "EditorCaption": ""
             }
           ]

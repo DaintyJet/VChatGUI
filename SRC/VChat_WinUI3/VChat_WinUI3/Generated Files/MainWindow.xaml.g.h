@@ -46,13 +46,40 @@ namespace winrt::VChat_WinUI3::implementation
         void UnloadObject(::winrt::Microsoft::UI::Xaml::DependencyObject const& dependencyObject);
         void DisconnectUnloadedObject(int32_t connectionId);
 
-        ::winrt::Microsoft::UI::Xaml::Controls::Button myButton()
+        ::winrt::Microsoft::UI::Xaml::Controls::TextBlock greetingOutput()
         {
-            return _myButton;
+            return _greetingOutput;
         }
-        void myButton(::winrt::Microsoft::UI::Xaml::Controls::Button value)
+        void greetingOutput(::winrt::Microsoft::UI::Xaml::Controls::TextBlock value)
         {
-            _myButton = value;
+            _greetingOutput = value;
+        }
+
+        ::winrt::Microsoft::UI::Xaml::Controls::Button Start_Button()
+        {
+            return _Start_Button;
+        }
+        void Start_Button(::winrt::Microsoft::UI::Xaml::Controls::Button value)
+        {
+            _Start_Button = value;
+        }
+
+        ::winrt::Microsoft::UI::Xaml::Controls::Button Stop_Button()
+        {
+            return _Stop_Button;
+        }
+        void Stop_Button(::winrt::Microsoft::UI::Xaml::Controls::Button value)
+        {
+            _Stop_Button = value;
+        }
+
+        ::winrt::Microsoft::UI::Xaml::Controls::TextBox VChatOutput()
+        {
+            return _VChatOutput;
+        }
+        void VChatOutput(::winrt::Microsoft::UI::Xaml::Controls::TextBox value)
+        {
+            _VChatOutput = value;
         }
         
     protected:
@@ -61,7 +88,10 @@ namespace winrt::VChat_WinUI3::implementation
     private:
         struct MainWindow_obj1_Bindings;
 
-        ::winrt::Microsoft::UI::Xaml::Controls::Button _myButton{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::TextBlock _greetingOutput{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::Button _Start_Button{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::Button _Stop_Button{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::TextBox _VChatOutput{nullptr};
     };
 }
 
