@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Local-Git\VChatGUI\SRC\Test-Child\Test-Child\main.cpp(21,34): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+C:\Local-Git\VChatGUI\SRC\Test-Child\Test-Child\main.cpp(22,34): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
 C:\Local-Git\VChatGUI\SRC\Test-Child\Test-Child\main.cpp(14,8): warning C4101: 'dwRead': unreferenced local variable
   Test-Child.vcxproj -> C:\Local-Git\VChatGUI\SRC\Test-Child\x64\Debug\Test-Child.exe

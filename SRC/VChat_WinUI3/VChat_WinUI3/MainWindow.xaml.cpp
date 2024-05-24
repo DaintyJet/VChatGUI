@@ -32,8 +32,8 @@ namespace winrt::VChat_WinUI3::implementation
         return;
     }
 
-    void MainWindow::Server_Listener() {
-        char buff[BUFFSIZE];
+    void MainWindow::Server_Listener_N(winrt::Microsoft::UI::Dispatching::DispatcherQueue dispatcherQueue) {
+        char buff[BUFFSIZE] = { 0 };
 
         // Catch any exceptions thrown by killing the processes we are 
         // trying to read from
@@ -43,26 +43,40 @@ namespace winrt::VChat_WinUI3::implementation
                 break;
             }
             std::cout << buff << "\n";
-            std::string converted = std::string(buff);
+            //std::string converted = std::wstring(buff, buff+strlen(buff));
+            //std::wstring wideStr = std::wstring(std::string(buff));
+            winrt::hstring converted = winrt::to_hstring(buff);
             // Need to use dispatcher Queues, Need to learn what they are. 
-            this->Write_Text_Box_Block(converted);
+            try {
+                dispatcherQueue.TryEnqueue([this, converted]()
+                    {
+                        this->Write_Text_Box_Block(converted);
+                    });
+             }
+            catch (std::exception e) {
+                std::cout << "Err\n";
+            }
         }
 
     }
 
-    void MainWindow::Write_Text_Box_Block(std::string textBlock) {
-       // t_mutex->WaitOne();
-        //VChatOutput.Text += "Test";
+    void MainWindow::Write_Text_Box_Block(winrt::hstring textBlock) {
         auto txt = VChatOutput();
-        VChatOutput().Text(VChatOutput().Text() + L"New text appended\n");
-        //t_mutex->ReleaseMutex();
+        VChatOutput().Text(VChatOutput().Text() + textBlock);
+        //VChatOutput().AppendText(L"Test");
+       // ScrollViewerVChat().ChangeView(NULL, ScrollViewerVChat().ExtentHeight(), NULL);
+        ScrollViewerVChat().ChangeView(nullptr, ScrollViewerVChat().ScrollableHeight(), nullptr);
+
         return;
     }
+
+
     void MainWindow::Start_Button_Click(IInspectable const&, RoutedEventArgs const&)
     {
-        this->Write_Text_Box_Block("Started Server");
+        this->Write_Text_Box_Block(L"Started Server");
         if (this->isStarted == 1)
             return;
+        
 
         if (this->serv_h->initPipes() == -1) {
             return;
@@ -71,7 +85,7 @@ namespace winrt::VChat_WinUI3::implementation
             return;
         }
        
-        this->t_handle = std::thread(&MainWindow::Server_Listener, this);
+        this->t_handle = std::thread(&MainWindow::Server_Listener_N, this, winrt::Microsoft::UI::Dispatching::DispatcherQueue::GetForCurrentThread());
         this->t_handle.detach();
         this->t_handle.~thread();
 

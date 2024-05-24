@@ -74,6 +74,12 @@ namespace winrt::VChat_WinUI3::implementation
             break;
         case 5:
             {
+                auto targetElement = target.as<::winrt::Microsoft::UI::Xaml::Controls::ScrollViewer>();
+                this->ScrollViewerVChat(targetElement);
+            }
+            break;
+        case 6:
+            {
                 auto targetElement = target.as<::winrt::Microsoft::UI::Xaml::Controls::TextBox>();
                 this->VChatOutput(targetElement);
             }

@@ -73,6 +73,15 @@ namespace winrt::VChat_WinUI3::implementation
             _Stop_Button = value;
         }
 
+        ::winrt::Microsoft::UI::Xaml::Controls::ScrollViewer ScrollViewerVChat()
+        {
+            return _ScrollViewerVChat;
+        }
+        void ScrollViewerVChat(::winrt::Microsoft::UI::Xaml::Controls::ScrollViewer value)
+        {
+            _ScrollViewerVChat = value;
+        }
+
         ::winrt::Microsoft::UI::Xaml::Controls::TextBox VChatOutput()
         {
             return _VChatOutput;
@@ -91,6 +100,7 @@ namespace winrt::VChat_WinUI3::implementation
         ::winrt::Microsoft::UI::Xaml::Controls::TextBlock _greetingOutput{nullptr};
         ::winrt::Microsoft::UI::Xaml::Controls::Button _Start_Button{nullptr};
         ::winrt::Microsoft::UI::Xaml::Controls::Button _Stop_Button{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::ScrollViewer _ScrollViewerVChat{nullptr};
         ::winrt::Microsoft::UI::Xaml::Controls::TextBox _VChatOutput{nullptr};
     };
 }

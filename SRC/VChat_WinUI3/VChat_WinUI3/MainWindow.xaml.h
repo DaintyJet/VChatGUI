@@ -22,7 +22,7 @@ namespace winrt::VChat_WinUI3::implementation
 
     private: bool isStarted; // Bool to track if we have started the server or not
     private: std::thread t_handle; // Thread Handle
-    private: std::mutex t_mutex;
+    //private: std::mutex t_mutex; // Since we are marshaling the UI Thread this is not really needed.
     private: server_manage::ServerManager* serv_h;
     public:
         int32_t MyProperty();
@@ -30,13 +30,13 @@ namespace winrt::VChat_WinUI3::implementation
         void Exit_Func(void);
 
         // Function To Manage Blocking Writes to the Textbox
-        void Write_Text_Box_Block(std::string);
+        void Write_Text_Box_Block(winrt::hstring);
 
         void Start_Button_Click(IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& args);
         void Stop_Button_Click(IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& args);
-
-    private: 
-        void Server_Listener();
+    public: 
+        void Server_Listener_N(winrt::Microsoft::UI::Dispatching::DispatcherQueue dispatcherQueue);
+        void Server_Listener() {}
     };
 }
 

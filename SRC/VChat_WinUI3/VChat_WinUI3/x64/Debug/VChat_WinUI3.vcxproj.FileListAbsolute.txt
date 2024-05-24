@@ -1,4 +1,6 @@
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\VChat_WinUI3.winmd
+C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\App.xbf
+C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\MainWindow.xbf
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\Assets\LockScreenLogo.scale-200.png
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\Assets\SplashScreen.scale-200.png
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\Assets\Square150x150Logo.scale-200.png
@@ -6,8 +8,6 @@ C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\Assets\Square44x44
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\Assets\StoreLogo.png
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\Assets\Wide310x150Logo.scale-200.png
-C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\App.xbf
-C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\MainWindow.xbf
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\resources.pri
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\x64\Debug\VChat_WinUI3.vcxproj.AssemblyReference.cache
 C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\x64\Debug\VChat_WinUI3.vcxproj.MdMergeInputs.cache

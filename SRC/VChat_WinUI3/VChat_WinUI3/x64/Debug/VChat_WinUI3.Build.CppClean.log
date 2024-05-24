@@ -3,21 +3,22 @@ c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vc143.pdb
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vc143.idb
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\pch.obj
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\mainwindow.xaml.obj
-c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\app.xaml.obj
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\module.g.obj
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\xamltypeinfo.impl.g.obj
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\app.xaml.obj
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\mddbootstrapautoinitializer.obj
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\mddbootstrapautoinitializer.asm
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\servermanager.obj
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\xamlmetadataprovider.obj
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\xamltypeinfo.g.obj
 c:\local-git\vchatgui\src\vchat_winui3\x64\debug\vchat_winui3\microsoft.windowsappruntime.bootstrap.dll
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\vchat_winui3.winmd.lastbuild
-c:\local-git\vchatgui\src\vchat_winui3\x64\debug\vchat_winui3\vchat_winui3.exe
-c:\local-git\vchatgui\src\vchat_winui3\x64\debug\vchat_winui3\vchat_winui3.pdb
-c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\unmerged\mainwindow.winmd
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\unmerged\xamlmetadataprovider.winmd
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\unmerged\mainwindow.winmd
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.exe.embed.manifest.res
 c:\local-git\vchatgui\src\vchat_winui3\x64\debug\vchat_winui3\vchat_winui3.lib
 c:\local-git\vchatgui\src\vchat_winui3\x64\debug\vchat_winui3\vchat_winui3.exp
-c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.ilk
+c:\local-git\vchatgui\src\vchat_winui3\x64\debug\vchat_winui3\vchat_winui3.winmd
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.vcxproj.cppwinrt_comp.rsp
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.vcxproj.cppwinrt_plat.rsp
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.vcxproj.cppwinrt_ref.rsp
@@ -25,14 +26,22 @@ c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.vcxpr
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.vcxproj.midlrt.rsp
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.exe.embed.manifest
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3_manifest.rc
+c:\local-git\vchatgui\src\vchat_winui3\x64\debug\vchat_winui3\vchat_winui3.pdb
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\cl.command.1.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\cl.items.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\cl.read.1.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\cl.write.1.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\copylocal.read.1u.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\copylocal.write.1u.tlog
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link-cvtres.read.1.tlog
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link-cvtres.write.1.tlog
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link-mt.read.1.tlog
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link-mt.write.1.tlog
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link-rc.read.1.tlog
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link-rc.write.1.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link.command.1.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link.read.1.tlog
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link.read.2.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link.secondary.1.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\link.write.1.tlog
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\midl-midlrt.write.1.tlog
@@ -45,6 +54,7 @@ c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\x64\debug\vchat_winui3.tlog\
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\generated files\app.xaml.g.h
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\generated files\mainwindow.g.h
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\generated files\mainwindow.xaml.g.h
+c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\generated files\servermanager.xaml.g.h
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\generated files\xamlbindinginfo.xaml.g.h
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\generated files\xamlmetadataprovider.g.h
 c:\local-git\vchatgui\src\vchat_winui3\vchat_winui3\generated files\xamltypeinfo.xaml.g.h

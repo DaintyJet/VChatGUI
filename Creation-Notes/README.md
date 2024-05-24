@@ -83,6 +83,10 @@ A useful tool due to the lack of a visual designer will be the [WinUI 3 Gallery]
 > [!NOTE]
 > You must have the required DLLs for the C++ WinUI3 executable installed on the target system
 
+### Implementation Notes
+
+When Creating a background thread it can accesses member functions. But WinUI3 limits UI operations to the UI thread. So we need to marshal it to do anything. [Ref](https://learn.microsoft.com/en-us/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue?view=windows-app-sdk-1.5)
+
 
 ## Visual Studio Setup WinForm
 1) Install [Visual Studio](https://visualstudio.microsoft.com/) 
