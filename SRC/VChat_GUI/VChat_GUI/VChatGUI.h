@@ -2,6 +2,7 @@
 #include <iostream>
 #include <process.h>
 #include <exception>
+#include <msclr/marshal_cppstd.h>
 #include "ServerManager.h"
 
 // Define Buffer Size
@@ -30,7 +31,7 @@ namespace VChatGUI {
 			//
 			//TODO: Add the constructor code here
 			//
-			this->serv_h = (server_manage::ServerManager*)new server_manage::ServerManager(9999);
+			this->serv_h = (server_manage::ServerManager*)new server_manage::ServerManager("9999");
 		}
 
 	protected:
@@ -57,9 +58,19 @@ namespace VChatGUI {
 	private: System::Threading::Thread^ t_handle; // Managaed Thread Object
 	private: System::Threading::Mutex^ t_mutex; // Managaed Mutex Object Object
 	private: System::Windows::Forms::Button^ Start_Button;
-	private: System::Windows::Forms::Label^ Hello_Label;
+
 	private: System::Windows::Forms::TextBox^ VChatOut;
 	private: System::Windows::Forms::Button^ Stop_Button;
+	private: System::Windows::Forms::Label^ InputPortLabel;
+	private: System::Windows::Forms::TextBox^ VChatPort;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ VChatPath;
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -74,16 +85,19 @@ namespace VChatGUI {
 		void InitializeComponent(void)
 		{
 			this->Start_Button = (gcnew System::Windows::Forms::Button());
-			this->Hello_Label = (gcnew System::Windows::Forms::Label());
 			this->VChatOut = (gcnew System::Windows::Forms::TextBox());
 			this->Stop_Button = (gcnew System::Windows::Forms::Button());
+			this->InputPortLabel = (gcnew System::Windows::Forms::Label());
+			this->VChatPort = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->VChatPath = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// Start_Button
 			// 
 			this->Start_Button->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->Start_Button->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->Start_Button->Location = System::Drawing::Point(12, 777);
+			this->Start_Button->Location = System::Drawing::Point(12, 800);
 			this->Start_Button->Name = L"Start_Button";
 			this->Start_Button->Size = System::Drawing::Size(162, 76);
 			this->Start_Button->TabIndex = 0;
@@ -91,30 +105,21 @@ namespace VChatGUI {
 			this->Start_Button->UseVisualStyleBackColor = true;
 			this->Start_Button->Click += gcnew System::EventHandler(this, &VChatGUI::Start_Button_Click);
 			// 
-			// Hello_Label
-			// 
-			this->Hello_Label->AutoSize = true;
-			this->Hello_Label->Location = System::Drawing::Point(250, 364);
-			this->Hello_Label->Name = L"Hello_Label";
-			this->Hello_Label->Size = System::Drawing::Size(80, 20);
-			this->Hello_Label->TabIndex = 1;
-			this->Hello_Label->Text = L"Hello Test";
-			// 
 			// VChatOut
 			// 
 			this->VChatOut->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->VChatOut->Location = System::Drawing::Point(0, 0);
+			this->VChatOut->Location = System::Drawing::Point(1, -2);
 			this->VChatOut->Multiline = true;
 			this->VChatOut->Name = L"VChatOut";
 			this->VChatOut->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->VChatOut->Size = System::Drawing::Size(980, 274);
+			this->VChatOut->Size = System::Drawing::Size(1664, 332);
 			this->VChatOut->TabIndex = 2;
 			// 
 			// Stop_Button
 			// 
 			this->Stop_Button->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->Stop_Button->Location = System::Drawing::Point(199, 777);
+			this->Stop_Button->Location = System::Drawing::Point(204, 800);
 			this->Stop_Button->Name = L"Stop_Button";
 			this->Stop_Button->Size = System::Drawing::Size(162, 76);
 			this->Stop_Button->TabIndex = 4;
@@ -122,15 +127,56 @@ namespace VChatGUI {
 			this->Stop_Button->UseVisualStyleBackColor = true;
 			this->Stop_Button->Click += gcnew System::EventHandler(this, &VChatGUI::Stop_Button_Click);
 			// 
+			// InputPortLabel
+			// 
+			this->InputPortLabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->InputPortLabel->AutoSize = true;
+			this->InputPortLabel->Location = System::Drawing::Point(12, 745);
+			this->InputPortLabel->Name = L"InputPortLabel";
+			this->InputPortLabel->Size = System::Drawing::Size(87, 20);
+			this->InputPortLabel->TabIndex = 5;
+			this->InputPortLabel->Text = L"VChat Port";
+			// 
+			// VChatPort
+			// 
+			this->VChatPort->Location = System::Drawing::Point(204, 745);
+			this->VChatPort->MaxLength = 6;
+			this->VChatPort->Name = L"VChatPort";
+			this->VChatPort->Size = System::Drawing::Size(162, 26);
+			this->VChatPort->TabIndex = 9;
+			this->VChatPort->Text = L"9999";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(12, 708);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(174, 20);
+			this->label1->TabIndex = 7;
+			this->label1->Text = L"VChat Executable Path";
+			// 
+			// VChatPath
+			// 
+			this->VChatPath->Location = System::Drawing::Point(204, 708);
+			this->VChatPath->Name = L"VChatPath";
+			this->VChatPath->Size = System::Drawing::Size(162, 26);
+			this->VChatPath->TabIndex = 8;
+			this->VChatPath->Text = L"Some-Path";
+			// 
 			// VChatGUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(979, 865);
+			this->ClientSize = System::Drawing::Size(1677, 901);
+			this->Controls->Add(this->VChatPath);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->VChatPort);
+			this->Controls->Add(this->InputPortLabel);
 			this->Controls->Add(this->Stop_Button);
 			this->Controls->Add(this->VChatOut);
-			this->Controls->Add(this->Hello_Label);
 			this->Controls->Add(this->Start_Button);
 			this->Location = System::Drawing::Point(1510, 1510);
 			this->Name = L"VChatGUI";
@@ -211,18 +257,29 @@ namespace VChatGUI {
 
 	/* Handler for start button being clicked */
 	private: System::Void Start_Button_Click(System::Object^ sender, System::EventArgs^ e) {
-			
+			char* end;
+			std::string portVal;
+
 			// If the server pointer has been allocated, and the server is started 
 			if (serv_h != nullptr && this->serv_h->get_isStarted())
 				return;
-			
+
+			// Validate port value and only update if numeric.
+			portVal = msclr::interop::marshal_as<std::string>(VChatPort->Text);
+			if (portVal != this->serv_h->get_serverPort() &&
+				strtol(portVal.c_str(), &end, 10) != 0 && *end == '\0') {
+				std::cout << "Converted String" << portVal << "\n";
+				//this->serv_h->set_port(const_cast<char*>(msclr::interop::marshal_as<std::string>(VChatPort->Text).c_str()));
+				this->serv_h->set_port(portVal);
+			}
+
 			// To prevent any conditions where the thread is killed in the middle of a mutex operation, we create a new one once we start a server 
 			this->t_mutex = gcnew System::Threading::Mutex();
 
 
 			// Notify Useer we are starting the server
 			this->Write_Text_Box_Block("Starting Server\r\n");
-			Hello_Label->Text = "Hello World 2";
+			//Hello_Label->Text = "Hello World 2";
 
 
 			if (this->serv_h->initPipes() == -1) {
@@ -270,5 +327,6 @@ namespace VChatGUI {
 			return;
 
 		}
-	}; // Class End
+
+}; // Class End
 } // Namespace end

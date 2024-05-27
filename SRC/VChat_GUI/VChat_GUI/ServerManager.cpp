@@ -98,13 +98,24 @@ int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 	// Local Management Info
 	STARTUPINFO siStartInfo;
 	bool bSuccess = FALSE;
-	wchar_t* convt_cmd;
+	wchar_t* convt_cmd = new wchar_t[strlen(cmd) + 8];
+	wchar_t* port_conv = new wchar_t[7];
 
+	std::locale::global(std::locale(""));
+	std::wcout.imbue(std::locale(""));  // Ensure std::wcout uses the correct locale
 	// Setup convt_cmd so we send over a WideChar Str
 	//convt_cmd = (wchar_t*)malloc(sizeof(wchar_t)* strlen(cmd)); // Attempting to free causes heap errors?
-	convt_cmd = new wchar_t[strlen(cmd)];
-	mbstowcs(convt_cmd, cmd, strlen(cmd) + 1); //Plus null
+	std::wcout << "STR: " << this->server_port.c_str() << strlen(this->server_port.c_str()) << " " << "\n";
 
+	// Convert LPSTR to wchar_t
+	mbstowcs(convt_cmd, cmd, strlen(cmd) + 1); //Plus null
+	mbstowcs(port_conv, this->server_port.c_str(), strlen(this->server_port.c_str()) + 1); //Plus null
+
+	// Concatinate strings for passing to the CreateProcessA
+	wcscat(convt_cmd, L" ");
+	wcscat(convt_cmd, port_conv);
+
+	std::wcout << convt_cmd << "\n";
 
 	// Set up members of the PROCESS_INFORMATION structure. 
 	ZeroMemory(&(this->server_proc), sizeof((this->server_proc)));

@@ -7,6 +7,7 @@ namespace server_manage {
     class ServerManager {
 	private:
 		bool isStarted; // Is the server started
+		std::string server_port;
 		PROCESS_INFORMATION server_proc; // Pointer to unmanaged type since we need to get around restrinctions, need to handle deallocation in destructor. 
 
 		/*
@@ -32,13 +33,35 @@ namespace server_manage {
 		LPTSTR  lpMsgBuf;
 	public:
 		// Constructor
-		ServerManager(int port): isStarted(0){
-			//server_proc = (PROCESS_INFORMATION*)malloc(sizeof(PROCESS_INFORMATION)); // Allocate space for Process Info
-
+		ServerManager(LPSTR port): isStarted(0), server_port(port){
 		}
 
+		/*
+		* Return server port string that is currently set
+		* 
+		* @param: None
+		* 
+		* @return: LPSTR containing port string.
+		*/
+		std::string get_serverPort() { return this->server_port;  }
 
+		/*
+		* Set server_port variable
+		*
+		* @param: nport: Should be a string consisting of an integer within 
+		*                the valid port range
+		*
+		* @return: None
+		*/
+		void set_port(std::string nport) { this->server_port = nport; }
 
+		/*
+		* Set isStarted variable
+		* 
+		* @param: val: Boolean value of 1 or 0
+		* 
+		* @return: None
+		*/
 		void set_isStarted(bool val) { isStarted = val; }
 
 		/*

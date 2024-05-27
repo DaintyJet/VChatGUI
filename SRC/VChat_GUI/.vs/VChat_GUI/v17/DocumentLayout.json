@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\ServerManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\ServerManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\VChatGUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\VChatGUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\VChatGUI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\ServerManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\ServerManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\ServerManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\ServerManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\VChatGUI.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D16E27E8-8B4F-4280-95A1-58267779F093}|VChat_GUI\\VChat_GUI.vcxproj|solutionrelative:VChat_GUI\\VChatGUI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,20 +30,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "VChatGUI.h [Design]",
               "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.h",
               "RelativeDocumentMoniker": "VChat_GUI\\VChatGUI.h",
               "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.h [Design]",
               "RelativeToolTip": "VChat_GUI\\VChatGUI.h [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-21T14:09:40.129Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-05-27T19:00:48.275Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServerManager.cpp",
+              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\ServerManager.cpp",
+              "RelativeDocumentMoniker": "VChat_GUI\\ServerManager.cpp",
+              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\ServerManager.cpp",
+              "RelativeToolTip": "VChat_GUI\\ServerManager.cpp",
+              "ViewState": "AQIAABkAAAAAAAAAAAAYwIoAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-27T17:49:09.21Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -55,44 +67,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ServerManager.h",
               "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\ServerManager.h",
               "RelativeDocumentMoniker": "VChat_GUI\\ServerManager.h",
               "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\ServerManager.h",
               "RelativeToolTip": "VChat_GUI\\ServerManager.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAC4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-22T14:26:17.228Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "VChatGUI.h",
-              "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.h",
-              "RelativeDocumentMoniker": "VChat_GUI\\VChatGUI.h",
-              "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.h",
-              "RelativeToolTip": "VChat_GUI\\VChatGUI.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEBAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-21T14:12:38.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "VChatGUI.resx",
               "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.resx",
               "RelativeDocumentMoniker": "VChat_GUI\\VChatGUI.resx",
               "ToolTip": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.resx",
               "RelativeToolTip": "VChat_GUI\\VChatGUI.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-05-21T14:12:35.247Z"
+              "WhenOpened": "2024-05-21T14:12:35.247Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "VChatGUI.cpp",
               "DocumentMoniker": "C:\\Local-Git\\VChatGUI\\SRC\\VChat_GUI\\VChat_GUI\\VChatGUI.cpp",
               "RelativeDocumentMoniker": "VChat_GUI\\VChatGUI.cpp",
