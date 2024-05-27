@@ -4,11 +4,17 @@
 
 
 /*
-* Purpose:
+* This function should store, and or log the Error message into
+* a file or message box. In the current implemntation this attempts
+* to write the error message to a string in the class and this can
+* be used to write the error message out to the user. This is not
+* currently saving legable strings.
 *
-* Return:
+* @param lpszFunction: This a a pointer to a constant ASCII string.
 *
-* Based on https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
+* @return: None
+*
+* Note: Based on https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
 */
 void server_manage::ServerManager::errMsg(PCTSTR  lpszFunction) {
 	// Pull in error message 
@@ -30,21 +36,17 @@ void server_manage::ServerManager::errMsg(PCTSTR  lpszFunction) {
 	return;
 
 }
+
+
 /*
-* Purpose: This function will return the current server status
+* Initalize the Unnamed Pipes used for communcating with the child process
 *
-* Return: boolean, 1 if the server is started, 0 otherwise.
-*/
-bool server_manage::ServerManager::get_isStarted() {
-	return this->isStarted;
-}
-
-/*
-Initalize the Unnamed Pipe handles
-
-Returns Error Coded Integer
-
-Implementation based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
+* @param: None
+*
+* @return: Error Coded Integer, -1 if failure to create any of the pipes
+*		   Otherwise return 1.
+*
+* Note: Implementation based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
 */
 int server_manage::ServerManager::initPipes() {
 	// https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.ole.interop.security_attributes?view=visualstudiosdk-2022
@@ -85,11 +87,17 @@ int server_manage::ServerManager::initPipes() {
 }
 
 /*
-Initalize the Unnamed Pipe handles
-
-Returns Error Coded Integer
-
-Based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
+* Create the child process and attach to initalized pipes (If they are not
+* inialized they will output to stdin/out). The executable used for the
+* creation of a child process is defined by the string provided as an argument.
+*
+*
+* @param cmd: This is a Pointer to an ASCII string we use as an argument to the
+*			  CreateProcessA procedure to spawn a child process.
+*
+* @return: Error Coded Integer, -1 for a failure and 1 for a success.
+*
+* Note: Based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
 */
 int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 	// Local Management Info
@@ -144,15 +152,20 @@ int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 	g_hChildStd_IN_Rd = NULL;
 
 	return 1;
-
 }
 
 /*
-* Purpose
+* This function will read from the pipe if it has been initalized, and write the string to a
+* provided char buffer.
 *
-* Return: -1 if error, o.w number of successfully read bytes.
+* @param buffObj: This is a pointer to a charicter buffer, this is the location the message
+*                 from the child will be written to.
 *
-* Based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
+* @param size: This specifis the size of the target buffObj we will be writing to.
+*
+* @return: -1 if error, otherwise this will be the number of successfully read bytes.
+*
+* Note: Based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
 */
 int server_manage::ServerManager::serverRead(char* buffObj, DWORD size) {
 	DWORD dwRead;
@@ -165,6 +178,14 @@ int server_manage::ServerManager::serverRead(char* buffObj, DWORD size) {
 	return dwRead;
 }
 
+/*
+* This function will kill the server process if it has been started
+*
+* @param: None
+*
+* @returnL result of killing process. Nonzeoro if success, 0 if failure.
+*
+*/
 int server_manage::ServerManager::killServer() {
 
 	uint16_t ret;

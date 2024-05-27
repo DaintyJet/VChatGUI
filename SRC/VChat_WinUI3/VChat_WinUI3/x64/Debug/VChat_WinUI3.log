@@ -1,3 +1,11 @@
-﻿  VChat_WinUI3.vcxproj -> C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\VChat_WinUI3.exe
+﻿  MainWindow.xaml.cpp
+  ServerManager.cpp
+C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\ServerManager.h(35,21): warning C4100: 'port': unreferenced formal parameter
+C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\ServerManager.cpp(198,24): warning C4244: '=': conversion from 'BOOL' to 'uint16_t', possible loss of data
+C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\ServerManager.h(35,21): warning C4100: 'port': unreferenced formal parameter
+C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\MainWindow.xaml.cpp(118,112): warning C4100: 'args': unreferenced formal parameter
+C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\VChat_WinUI3\MainWindow.xaml.cpp(118,60): warning C4100: 'sender': unreferenced formal parameter
+     Creating library C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\VChat_WinUI3.lib and object C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\VChat_WinUI3.exp
+  VChat_WinUI3.vcxproj -> C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\x64\Debug\VChat_WinUI3\VChat_WinUI3.exe
   C:\Local-Git\VChatGUI\SRC\VChat_WinUI3\packages\Microsoft.WindowsAppSDK.1.5.240428000\build\native\..\..\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll
   1 File(s) copied

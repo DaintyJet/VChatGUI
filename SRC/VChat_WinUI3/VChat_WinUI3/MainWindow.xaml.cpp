@@ -22,6 +22,12 @@ namespace winrt::VChat_WinUI3::implementation
         throw hresult_not_implemented();
     }
 
+    /* Exit Function to kill the server 
+    * 
+    * @param: None
+    * 
+    * @return: None
+    */
     void MainWindow::Exit_Func() {
         if (this->isStarted)
             return;
@@ -32,6 +38,14 @@ namespace winrt::VChat_WinUI3::implementation
         return;
     }
 
+    /* 
+    * Background function for listening and writing server output 
+    * to the texbox window
+    * 
+    * @param dispatcherQueue: Dispatcher Queue to enqueue the function call onto.
+    * 
+    * @return: None
+    */
     void MainWindow::Server_Listener_N(winrt::Microsoft::UI::Dispatching::DispatcherQueue dispatcherQueue) {
         char buff[BUFFSIZE] = { 0 };
 
@@ -42,9 +56,7 @@ namespace winrt::VChat_WinUI3::implementation
                 std::cout << GetLastError() << "\n";
                 break;
             }
-            std::cout << buff << "\n";
-            //std::string converted = std::wstring(buff, buff+strlen(buff));
-            //std::wstring wideStr = std::wstring(std::string(buff));
+            // Convert char buffer to hstring.
             winrt::hstring converted = winrt::to_hstring(buff);
             // Need to use dispatcher Queues, Need to learn what they are. 
             try {
@@ -54,12 +66,19 @@ namespace winrt::VChat_WinUI3::implementation
                     });
              }
             catch (std::exception e) {
-                std::cout << "Err\n";
+                return;
             }
         }
-
+        return; // We should never get here
     }
 
+    /*
+    * Write message out to the text window of the GUI and autoscroll
+    * 
+    * @param textBlock: textstring to write to output window.
+    * 
+    * @return: None
+    */
     void MainWindow::Write_Text_Box_Block(winrt::hstring textBlock) {
         auto txt = VChatOutput();
         VChatOutput().Text(VChatOutput().Text() + textBlock);
@@ -70,7 +89,7 @@ namespace winrt::VChat_WinUI3::implementation
         return;
     }
 
-
+    /* Start Button Handler */
     void MainWindow::Start_Button_Click(IInspectable const&, RoutedEventArgs const&)
     {
         this->Write_Text_Box_Block(L"Started Server");
@@ -86,8 +105,8 @@ namespace winrt::VChat_WinUI3::implementation
         }
        
         this->t_handle = std::thread(&MainWindow::Server_Listener_N, this, winrt::Microsoft::UI::Dispatching::DispatcherQueue::GetForCurrentThread());
-        this->t_handle.detach();
-        this->t_handle.~thread();
+        //this->t_handle.detach();
+        //this->t_handle.~thread();
 
         //Start_Button().Content(box_value(L"Clicked"));
         this->serv_h->set_isStarted(1);
@@ -95,6 +114,7 @@ namespace winrt::VChat_WinUI3::implementation
         return;
     }
 
+    /* Start Button Handler */
     void MainWindow::Stop_Button_Click(IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& args) {
         if (this->isStarted == 0)
             return;

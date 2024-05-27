@@ -140,6 +140,17 @@ namespace VChatGUI {
 
 		}
 #pragma endregion
+
+	/*
+	* Background thread function that will be started when the server 
+	* starts. This function will call the serverRead function from the 
+	* server manager object (blocking) if this is successful we will
+	* output the content to the message block.
+	*
+	* @param p: Not used.
+	*
+	* @return: None
+	*/
 	public: System::Void Server_Lisener(Object^ p) {
 		std::cout << "Test\n";
 		char buff[BUFFSIZE];
@@ -152,18 +163,27 @@ namespace VChatGUI {
 					std::cout << GetLastError() << "\n";
 					break;
 				}
-				std::cout << buff << "\n";
 				System::String^ converted = gcnew System::String(buff);
 				Write_Text_Box_Block(converted);
+				delete converted;
 			}
 		}
 		// System::Threading::ThreadInterruptedException^
 		catch (...) {
-			
+			// If we catch an exception we probably should exit (Nothing to clean up)
 			return;
 		}
 	}
-
+	
+	/*
+	* This functions uses a mutex with an indefinate block. This will write to the 
+	* VChat Output textbox.
+	*
+	* @param textblock: This is a block of text we will output to the screen (Should 
+	*                   terminated in `\r\n`
+	* 
+	* @return: None
+	*/
 	private: System::Void Write_Text_Box_Block(System::String^ textBlock) {
 		t_mutex->WaitOne();
 		this->VChatOut->AppendText(textBlock);
@@ -171,19 +191,25 @@ namespace VChatGUI {
 		return;
 	}
 
+	/*
+	* This functions uses a mutex with an timed block. This will write to the 
+	* VChat Output textbox.
+	*
+	* @param textblock: This is a block of text we will output to the screen (Should 
+	*                   terminated in `\r\n`
+	* 
+	* @return: None
+	*/
 	private: System::Void Write_Text_Box_Timed(System::String^ textBlock) {
 		bool chk = 0;
-		
 		chk = t_mutex->WaitOne(1000);
-
 		this->VChatOut->AppendText(textBlock);
-		
 		if(chk == 1)
 			t_mutex->ReleaseMutex();
-
 		return;
-
 	}
+
+	/* Handler for start button being clicked */
 	private: System::Void Start_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 			
 			// If the server pointer has been allocated, and the server is started 
@@ -218,6 +244,8 @@ namespace VChatGUI {
 
 			return;
 	}
+
+	/* Handler for stop button being clicked */
 	private: System::Void Stop_Button_Click(System::Object^ sender, System::EventArgs^ e) {
 			
 			// Only allow killing the server if it has been started. 
