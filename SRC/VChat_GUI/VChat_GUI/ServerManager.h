@@ -99,7 +99,7 @@ namespace server_manage {
 		*
 		* Note: Based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
 		*/
-		int CreateServerProcess(LPSTR cmd);
+		int CreateServerProcess(std::string cmd);
 
 		/*
 		* This function will kill the server process if it has been started

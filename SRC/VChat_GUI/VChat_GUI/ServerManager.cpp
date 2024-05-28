@@ -29,7 +29,7 @@ void server_manage::ServerManager::errMsg(PCTSTR  lpszFunction) {
 	// Signal Error Message Box for WinForm, 
 
 	/* Temp Error Message*/
-	std::cout << lpszFunction;
+	std::wcout << lpszFunction << this->lpMsgBuf;
 	return;
 }
 
@@ -94,11 +94,11 @@ int server_manage::ServerManager::initPipes() {
 * 
 * Note: Based on https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
 */
-int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
+int server_manage::ServerManager::CreateServerProcess(std::string  cmd) {
 	// Local Management Info
 	STARTUPINFO siStartInfo;
 	bool bSuccess = FALSE;
-	wchar_t* convt_cmd = new wchar_t[strlen(cmd) + 8];
+	wchar_t* convt_cmd = new wchar_t[strlen(cmd.c_str()) + 8];
 	wchar_t* port_conv = new wchar_t[7];
 
 	std::locale::global(std::locale(""));
@@ -108,7 +108,7 @@ int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 	std::wcout << "STR: " << this->server_port.c_str() << strlen(this->server_port.c_str()) << " " << "\n";
 
 	// Convert LPSTR to wchar_t
-	mbstowcs(convt_cmd, cmd, strlen(cmd) + 1); //Plus null
+	mbstowcs(convt_cmd, cmd.c_str(), strlen(cmd.c_str()) + 1); //Plus null
 	mbstowcs(port_conv, this->server_port.c_str(), strlen(this->server_port.c_str()) + 1); //Plus null
 
 	// Concatinate strings for passing to the CreateProcessA
@@ -138,9 +138,9 @@ int server_manage::ServerManager::CreateServerProcess(LPSTR  cmd) {
 		NULL,             // use parent's environment 
 		NULL,             // use parent's current directory 
 		&siStartInfo,     // STARTUPINFO pointer 
-		&(server_proc));  // receives PROCESS_INFORMATION 
+		&(this->server_proc));  // receives PROCESS_INFORMATION 
 
-	std::cout << server_proc.dwProcessId << "\n"; // Temp for Testing
+	std::cout << this->server_proc.dwProcessId << "\n"; // Temp for Testing
 
 	// If an error occurs, exit the application. 
 	if (bSuccess == FALSE) {

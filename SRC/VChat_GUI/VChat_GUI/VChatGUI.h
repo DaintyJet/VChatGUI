@@ -163,7 +163,7 @@ namespace VChatGUI {
 			this->VChatPath->Name = L"VChatPath";
 			this->VChatPath->Size = System::Drawing::Size(162, 26);
 			this->VChatPath->TabIndex = 8;
-			this->VChatPath->Text = L"Some-Path";
+			this->VChatPath->Text = L"C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe";
 			// 
 			// VChatGUI
 			// 
@@ -287,7 +287,8 @@ namespace VChatGUI {
 				return;
 			}
 
-			if (this->serv_h->CreateServerProcess("C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe") == -1) {
+			// C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe"
+			if (this->serv_h->CreateServerProcess(msclr::interop::marshal_as<std::string>(VChatPath->Text)) == -1) {
 				this->VChatOut->AppendText("Failed to Create Child Process\r\n");
 				return;
 			}

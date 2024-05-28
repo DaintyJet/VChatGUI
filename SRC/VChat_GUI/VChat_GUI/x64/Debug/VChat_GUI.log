@@ -1,4 +1,7 @@
-﻿  VChatGUI.cpp
-C:\Local-Git\VChatGUI\SRC\VChat_GUI\VChat_GUI\VChatGUI.cpp(11,6): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+﻿  ServerManager.cpp
+C:\Local-Git\VChatGUI\SRC\VChat_GUI\VChat_GUI\ServerManager.cpp(111,2): warning C4996: 'mbstowcs': This function or variable may be unsafe. Consider using mbstowcs_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Local-Git\VChatGUI\SRC\VChat_GUI\VChat_GUI\ServerManager.cpp(112,2): warning C4996: 'mbstowcs': This function or variable may be unsafe. Consider using mbstowcs_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Local-Git\VChatGUI\SRC\VChat_GUI\VChat_GUI\ServerManager.cpp(115,2): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Local-Git\VChatGUI\SRC\VChat_GUI\VChat_GUI\ServerManager.cpp(116,2): warning C4996: 'wcscat': This function or variable may be unsafe. Consider using wcscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   ServerManager.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   VChat_GUI.vcxproj -> C:\Local-Git\VChatGUI\SRC\VChat_GUI\x64\Debug\VChat_GUI.exe

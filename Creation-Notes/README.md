@@ -62,7 +62,7 @@ A useful tool due to the lack of a visual designer will be the [WinUI 3 Gallery]
       ...
       <WindowsPackageType>None</WindowsPackageType>
       ...
-   </PropertyGroup> 
+   </PropertyGroup>
    ...
    </Project>
    ```
@@ -74,7 +74,7 @@ A useful tool due to the lack of a visual designer will be the [WinUI 3 Gallery]
       ...
       <AppxPackage>false</AppxPackage>
       ...
-   </PropertyGroup> 
+   </PropertyGroup>
    ...
    </Project>
    ```
@@ -89,7 +89,7 @@ When Creating a background thread it can accesses member functions. But WinUI3 l
 
 
 ## Visual Studio Setup WinForm
-1) Install [Visual Studio](https://visualstudio.microsoft.com/) 
+1) Install [Visual Studio](https://visualstudio.microsoft.com/)
 2) Install the [Desktop Development With C++](https://learn.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=msvc-170#:~:text=For%20core%20C%20and%20C%2B%2B%20support%2C)
 
    <img src="Images/DDC.png">
@@ -160,13 +160,36 @@ When Creating a background thread it can accesses member functions. But WinUI3 l
    * `#include "VChatGUI.h"`: This includes the structure that is generated for your WindForm
    * `using namespace System`: Use the System namespace (Omit the System:: tag from instructions)
    * `using namespace System::Windows::Forms`: Use the `System::Windows::Forms` namespace
-   * [`[STAThreadAttribute]`](https://learn.microsoft.com/en-us/dotnet/api/system.stathreadattribute?view=net-8.0): This specifies we will be using a [Single Threaded Apartment](https://learn.microsoft.com/en-us/windows/win32/com/single-threaded-apartments) design, where multiple threads communicate using a event or message passing scheme. This allows threads to wait on and execute once they have received an event.  
+   * [`[STAThreadAttribute]`](https://learn.microsoft.com/en-us/dotnet/api/system.stathreadattribute?view=net-8.0): This specifies we will be using a [Single Threaded Apartment](https://learn.microsoft.com/en-us/windows/win32/com/single-threaded-apartments) design, where multiple threads communicate using a event or message passing scheme. This allows threads to wait on and execute once they have received an event.
 
-https://stackoverflow.com/questions/12184614/trigger-controls-event-programmatically#:~:text=To%20raise%20an%20event%20from%20outside%20the%20declaring,%7B%20public%20void%20ProgrammaticClick%28EventArgs%20e%29%20%7B%20base.OnClick%28e%29%3B%20%7D
+## Additional Configuration
+**Ensure No Console**:
+1. Open the Properties Tab
+2. Open `Linker -> System` and set Subsystem to `Windows(/CONSOLE)`
 
-I could always add a mutex, but inheriting the class and firing off an event is likely more sussinct if less explicit. 
+   <img src="Images/LSWF.png">
 
-https://stackoverflow.com/questions/1231774/why-public-ref-in-c-class-definition
+3. Make sure CreateProcessA does not open a Window. Use [Process Creation Flags](https://learn.microsoft.com/en-us/windows/win32/procthread/process-creation-flags)
+   ```cpp
+	bSuccess = CreateProcess(NULL,
+		convt_cmd,        // command line
+		NULL,             // process security attributes
+		NULL,             // primary thread security attributes
+		TRUE,             // handles are inherited
+		CREATE_NO_WINDOW, // creation flags
+		NULL,             // use parent's environment
+		NULL,             // use parent's current directory
+		&siStartInfo,     // STARTUPINFO pointer
+		&(server_proc));  // receives PROCESS_INFORMATION
+   ```
+   * Note: The only thing we need to change in order to make the window show up is to change `CREATE_NO_WINDOW` to `0` for all the defaults to be used.
+### Implementation Notes
+An initial idea was to to use [events](https://stackoverflow.com/questions/12184614/trigger-controls-event-programmatically#:~:text=To%20raise%20an%20event%20from%20outside%20the%20declaring,%7B%20public%20void%20ProgrammaticClick%28EventArgs%20e%29%20%7B%20base.OnClick%28e%29%3B%20%7D), in a method such that the background thread reading from the pipe we create would raise an event each time it successfully reads from the child process. As there is not a restriction on what can or cannot interact with the UI elements it is much simpler to use mutexes and directly interface with the UI elements.
+
+We are required to use a special Mutex and Threading functions since the UI Class (MainWindow) is a [managed class](https://learn.microsoft.com/en-us/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli?view=msvc-170) which means it is garbage collected and integrated with the .NET environment. They place additional restriction on what can be contained in these classes. This means we can only contained other managed objects or C Primitive types (including pointers). This means in order to contain the ServerManager Class, which is un managed we store a pointer to the object rather than the object itself. Additionally we use the [`System::Threading::Thread^`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread?view=net-8.0), and `System::Threading::Mutex^` managed objects rather than the `std::thread` and `std::mutex`.
+
+We kill the thread using the [interrupt](https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread.interrupt?view=net-8.0#system-threading-thread-interrupt) method, this allows it to exit from a wait state.
+
 
 ## Server Manager Code
 https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
