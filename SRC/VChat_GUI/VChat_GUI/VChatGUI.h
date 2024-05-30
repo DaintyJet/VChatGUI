@@ -97,31 +97,34 @@ namespace VChatGUI {
 			// 
 			this->Start_Button->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->Start_Button->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->Start_Button->Location = System::Drawing::Point(12, 800);
+			this->Start_Button->BackColor = System::Drawing::Color::DimGray;
+			this->Start_Button->Location = System::Drawing::Point(963, 637);
 			this->Start_Button->Name = L"Start_Button";
-			this->Start_Button->Size = System::Drawing::Size(162, 76);
+			this->Start_Button->Size = System::Drawing::Size(185, 121);
 			this->Start_Button->TabIndex = 0;
 			this->Start_Button->Text = L"Start-Server";
-			this->Start_Button->UseVisualStyleBackColor = true;
+			this->Start_Button->UseVisualStyleBackColor = false;
 			this->Start_Button->Click += gcnew System::EventHandler(this, &VChatGUI::Start_Button_Click);
 			// 
 			// VChatOut
 			// 
 			this->VChatOut->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->VChatOut->Location = System::Drawing::Point(1, -2);
+			this->VChatOut->BackColor = System::Drawing::SystemColors::MenuText;
+			this->VChatOut->ForeColor = System::Drawing::Color::ForestGreen;
+			this->VChatOut->Location = System::Drawing::Point(1, -7);
 			this->VChatOut->Multiline = true;
 			this->VChatOut->Name = L"VChatOut";
 			this->VChatOut->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->VChatOut->Size = System::Drawing::Size(1664, 332);
+			this->VChatOut->Size = System::Drawing::Size(1677, 402);
 			this->VChatOut->TabIndex = 2;
 			// 
 			// Stop_Button
 			// 
 			this->Stop_Button->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->Stop_Button->Location = System::Drawing::Point(204, 800);
+			this->Stop_Button->Location = System::Drawing::Point(963, 771);
 			this->Stop_Button->Name = L"Stop_Button";
-			this->Stop_Button->Size = System::Drawing::Size(162, 76);
+			this->Stop_Button->Size = System::Drawing::Size(185, 118);
 			this->Stop_Button->TabIndex = 4;
 			this->Stop_Button->Text = L"Stop-Server";
 			this->Stop_Button->UseVisualStyleBackColor = true;
@@ -133,35 +136,43 @@ namespace VChatGUI {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->InputPortLabel->AutoSize = true;
-			this->InputPortLabel->Location = System::Drawing::Point(12, 745);
+			this->InputPortLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->InputPortLabel->Location = System::Drawing::Point(12, 819);
 			this->InputPortLabel->Name = L"InputPortLabel";
-			this->InputPortLabel->Size = System::Drawing::Size(87, 20);
+			this->InputPortLabel->Size = System::Drawing::Size(175, 37);
 			this->InputPortLabel->TabIndex = 5;
 			this->InputPortLabel->Text = L"VChat Port";
 			// 
 			// VChatPort
 			// 
-			this->VChatPort->Location = System::Drawing::Point(204, 745);
+			this->VChatPort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->VChatPort->Location = System::Drawing::Point(401, 816);
 			this->VChatPort->MaxLength = 6;
 			this->VChatPort->Name = L"VChatPort";
-			this->VChatPort->Size = System::Drawing::Size(162, 26);
+			this->VChatPort->Size = System::Drawing::Size(108, 44);
 			this->VChatPort->TabIndex = 9;
 			this->VChatPort->Text = L"9999";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(12, 708);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(12, 717);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(174, 20);
+			this->label1->Size = System::Drawing::Size(347, 37);
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"VChat Executable Path";
 			// 
 			// VChatPath
 			// 
-			this->VChatPath->Location = System::Drawing::Point(204, 708);
+			this->VChatPath->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->VChatPath->Location = System::Drawing::Point(401, 714);
 			this->VChatPath->Name = L"VChatPath";
-			this->VChatPath->Size = System::Drawing::Size(162, 26);
+			this->VChatPath->Size = System::Drawing::Size(486, 44);
 			this->VChatPath->TabIndex = 8;
 			this->VChatPath->Text = L"C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe";
 			// 
@@ -170,6 +181,7 @@ namespace VChatGUI {
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
+			this->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->ClientSize = System::Drawing::Size(1677, 901);
 			this->Controls->Add(this->VChatPath);
 			this->Controls->Add(this->label1);
