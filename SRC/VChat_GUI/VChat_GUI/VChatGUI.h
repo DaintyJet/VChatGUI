@@ -32,7 +32,8 @@ namespace VChatGUI {
 			//TODO: Add the constructor code here
 			//
 			srv_prompt = gcnew System::String("VChat Server: ");
-			gui_prompt = gcnew System::String("VChat GUI: ");
+			gui_prompt = gcnew System::String("VChat GUI ");
+			u_port = gcnew System::String("NULL");
 			this->serv_h = (server_manage::ServerManager*)new server_manage::ServerManager("9999");
 		}
 
@@ -62,18 +63,24 @@ namespace VChatGUI {
 	private: System::Windows::Forms::Button^ Start_Button;
 	private: System::String^ srv_prompt;
 	private: System::String^ gui_prompt;
+	private: System::String^ u_port;
 
 
 	private: System::Windows::Forms::TextBox^ VChatOut;
 	private: System::Windows::Forms::Button^ Stop_Button;
 	private: System::Windows::Forms::Label^ InputPortLabel;
 	private: System::Windows::Forms::TextBox^ VChatPort;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ ExeLabel;
+
 	private: System::Windows::Forms::TextBox^ VChatPath;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Label^ StatusLabel;
+	private: System::Windows::Forms::Label^ PortLabel;
+
+
+	private: System::Windows::Forms::TextBox^ StatusBox;
+	private: System::Windows::Forms::TextBox^ PortBox;
+
+
 
 
 
@@ -100,12 +107,12 @@ namespace VChatGUI {
 			this->Stop_Button = (gcnew System::Windows::Forms::Button());
 			this->InputPortLabel = (gcnew System::Windows::Forms::Label());
 			this->VChatPort = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->ExeLabel = (gcnew System::Windows::Forms::Label());
 			this->VChatPath = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->StatusLabel = (gcnew System::Windows::Forms::Label());
+			this->PortLabel = (gcnew System::Windows::Forms::Label());
+			this->StatusBox = (gcnew System::Windows::Forms::TextBox());
+			this->PortBox = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// Start_Button
@@ -181,18 +188,18 @@ namespace VChatGUI {
 			this->VChatPort->TabIndex = 9;
 			this->VChatPort->Text = L"9999";
 			// 
-			// label1
+			// ExeLabel
 			// 
-			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ExeLabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->ExeLabel->AutoSize = true;
+			this->ExeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Location = System::Drawing::Point(12, 674);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(316, 32);
-			this->label1->TabIndex = 7;
-			this->label1->Text = L"VChat Executable Path:";
+			this->ExeLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->ExeLabel->Location = System::Drawing::Point(12, 674);
+			this->ExeLabel->Name = L"ExeLabel";
+			this->ExeLabel->Size = System::Drawing::Size(316, 32);
+			this->ExeLabel->TabIndex = 7;
+			this->ExeLabel->Text = L"VChat Executable Path:";
 			// 
 			// VChatPath
 			// 
@@ -206,55 +213,55 @@ namespace VChatGUI {
 			this->VChatPath->TabIndex = 8;
 			this->VChatPath->Text = L"C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe";
 			// 
-			// label2
+			// StatusLabel
 			// 
-			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->StatusLabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->StatusLabel->AutoSize = true;
+			this->StatusLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label2->Location = System::Drawing::Point(1232, 671);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(193, 32);
-			this->label2->TabIndex = 10;
-			this->label2->Text = L"Server Status:";
+			this->StatusLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->StatusLabel->Location = System::Drawing::Point(1232, 671);
+			this->StatusLabel->Name = L"StatusLabel";
+			this->StatusLabel->Size = System::Drawing::Size(193, 32);
+			this->StatusLabel->TabIndex = 10;
+			this->StatusLabel->Text = L"Server Status:";
 			// 
-			// label3
+			// PortLabel
 			// 
-			this->label3->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PortLabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->PortLabel->AutoSize = true;
+			this->PortLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->label3->Location = System::Drawing::Point(1232, 811);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(166, 32);
-			this->label3->TabIndex = 11;
-			this->label3->Text = L"Active Port: ";
+			this->PortLabel->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->PortLabel->Location = System::Drawing::Point(1232, 811);
+			this->PortLabel->Name = L"PortLabel";
+			this->PortLabel->Size = System::Drawing::Size(166, 32);
+			this->PortLabel->TabIndex = 11;
+			this->PortLabel->Text = L"Active Port: ";
 			// 
-			// textBox1
+			// StatusBox
 			// 
-			this->textBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->textBox1->BackColor = System::Drawing::Color::Red;
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->StatusBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->StatusBox->BackColor = System::Drawing::Color::Red;
+			this->StatusBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->StatusBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(1460, 649);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(178, 82);
-			this->textBox1->TabIndex = 12;
+			this->StatusBox->Location = System::Drawing::Point(1460, 649);
+			this->StatusBox->Name = L"StatusBox";
+			this->StatusBox->Size = System::Drawing::Size(178, 82);
+			this->StatusBox->TabIndex = 12;
 			// 
-			// textBox2
+			// PortBox
 			// 
-			this->textBox2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->textBox2->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->PortBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->PortBox->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->PortBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(1464, 811);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(150, 39);
-			this->textBox2->TabIndex = 13;
-			this->textBox2->Text = L"NULL";
+			this->PortBox->Location = System::Drawing::Point(1464, 811);
+			this->PortBox->Name = L"PortBox";
+			this->PortBox->Size = System::Drawing::Size(150, 39);
+			this->PortBox->TabIndex = 13;
+			this->PortBox->Text = L"NULL";
 			// 
 			// VChatGUI
 			// 
@@ -264,12 +271,12 @@ namespace VChatGUI {
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->ClientSize = System::Drawing::Size(1677, 901);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
+			this->Controls->Add(this->PortBox);
+			this->Controls->Add(this->StatusBox);
+			this->Controls->Add(this->PortLabel);
+			this->Controls->Add(this->StatusLabel);
 			this->Controls->Add(this->VChatPath);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->ExeLabel);
 			this->Controls->Add(this->VChatPort);
 			this->Controls->Add(this->InputPortLabel);
 			this->Controls->Add(this->Stop_Button);
@@ -359,6 +366,9 @@ namespace VChatGUI {
 			char* end;
 			std::string portVal;
 
+			// Get Current Date
+			DateTime localDate = DateTime::Now;
+			
 			// If the server pointer has been allocated, and the server is started 
 			if (serv_h != nullptr && this->serv_h->get_isStarted())
 				return;
@@ -367,7 +377,6 @@ namespace VChatGUI {
 			portVal = msclr::interop::marshal_as<std::string>(VChatPort->Text);
 			if (portVal != this->serv_h->get_serverPort() &&
 				strtol(portVal.c_str(), &end, 10) != 0 && *end == '\0') {
-				//this->serv_h->set_port(const_cast<char*>(msclr::interop::marshal_as<std::string>(VChatPort->Text).c_str()));
 				this->serv_h->set_port(portVal);
 			}
 
@@ -375,19 +384,17 @@ namespace VChatGUI {
 			this->t_mutex = gcnew System::Threading::Mutex();
 
 
-			// Notify Useer we are starting the server
-			this->Write_Text_Box_Block(gui_prompt, "Starting Server\r\n");
-			//Hello_Label->Text = "Hello World 2";
+			// Notify User we are starting the server
+			this->Write_Text_Box_Block(gui_prompt + localDate.ToString() + ": ", "Starting Server\r\n");
 
 
 			if (this->serv_h->initPipes() == -1) {
-				this->Write_Text_Box_Block(gui_prompt, "Failed to Create Unnamed Pipes\r\n");
+				this->Write_Text_Box_Block(gui_prompt + localDate.ToString() + ": ", "Failed to Create Unnamed Pipes\r\n");
 				return;
 			}
 
-			// C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe"
 			if (this->serv_h->CreateServerProcess(msclr::interop::marshal_as<std::string>(VChatPath->Text)) == -1) {
-				this->Write_Text_Box_Block(gui_prompt, "Failed to Create Child Process\r\n");
+				this->Write_Text_Box_Block(gui_prompt + localDate.ToString() + ": ", "Failed to Create Child Process\r\n");
 				return;
 			}
 
@@ -397,7 +404,12 @@ namespace VChatGUI {
 
 			// Set Started Tracker
 			this->serv_h->set_isStarted(1);
+			
+			// Update Status Box Color
+			this->StatusBox->BackColor = System::Drawing::Color::Green;
 
+			// Update Port Used, this string is garbage collected
+			this->PortBox->Text = gcnew System::String(this->serv_h->get_serverPort().c_str());
 			return;
 	}
 
@@ -407,7 +419,8 @@ namespace VChatGUI {
 			if (!this->serv_h->get_isStarted())
 				return;
 			
-			//std::cout << this->serv_h->killServer() << "\n" << GetLastError() << "\n";
+			// Get Current Date
+			DateTime localDate = DateTime::Now;
 			
 			// Kill Server
 			this->t_handle->Interrupt(); // Abort since there is not much cleanup we do. This is illadvised.
@@ -416,10 +429,16 @@ namespace VChatGUI {
 
 
 			// Display that we are killing/killed the server 
-			this->Write_Text_Box_Timed(gui_prompt,"Killing Server\r\n");
+			this->Write_Text_Box_Timed(gui_prompt + localDate.ToString() + ": ","Killing Server\r\n");
 
 			// Remove mutex
 			delete this->t_mutex;
+
+			// Update Status Box Color
+			this->StatusBox->BackColor = System::Drawing::Color::Red;
+
+			// Update Port Used to NULL (Use a string stored in class to prevent repeated deletions and creations)
+			this->PortBox->Text = u_port;
 			return;
 
 		}
