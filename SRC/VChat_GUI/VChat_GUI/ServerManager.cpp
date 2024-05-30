@@ -130,15 +130,15 @@ int server_manage::ServerManager::CreateServerProcess(std::string  cmd) {
 	siStartInfo.dwFlags |= STARTF_USESTDHANDLES;
 
 	bSuccess = CreateProcess(NULL,
-		convt_cmd,        // command line 
-		NULL,             // process security attributes 
-		NULL,             // primary thread security attributes 
-		TRUE,             // handles are inherited 
-		0,                // creation flags 
-		NULL,             // use parent's environment 
-		NULL,             // use parent's current directory 
-		&siStartInfo,     // STARTUPINFO pointer 
-		&(this->server_proc));  // receives PROCESS_INFORMATION 
+		convt_cmd,             // command line 
+		NULL,                  // process security attributes 
+		NULL,                  // primary thread security attributes 
+		TRUE,                  // handles are inherited 
+		0 | CREATE_NO_WINDOW,  // creation flags 
+		NULL,                  // use parent's environment 
+		NULL,                  // use parent's current directory 
+		&siStartInfo,          // STARTUPINFO pointer 
+		&(this->server_proc)); // receives PROCESS_INFORMATION 
 
 	std::cout << this->server_proc.dwProcessId << "\n"; // Temp for Testing
 

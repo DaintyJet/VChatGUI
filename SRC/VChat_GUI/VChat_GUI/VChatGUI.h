@@ -31,6 +31,8 @@ namespace VChatGUI {
 			//
 			//TODO: Add the constructor code here
 			//
+			srv_prompt = gcnew System::String("VChat Server: ");
+			gui_prompt = gcnew System::String("VChat GUI: ");
 			this->serv_h = (server_manage::ServerManager*)new server_manage::ServerManager("9999");
 		}
 
@@ -58,6 +60,9 @@ namespace VChatGUI {
 	private: System::Threading::Thread^ t_handle; // Managaed Thread Object
 	private: System::Threading::Mutex^ t_mutex; // Managaed Mutex Object Object
 	private: System::Windows::Forms::Button^ Start_Button;
+	private: System::String^ srv_prompt;
+	private: System::String^ gui_prompt;
+
 
 	private: System::Windows::Forms::TextBox^ VChatOut;
 	private: System::Windows::Forms::Button^ Stop_Button;
@@ -65,6 +70,12 @@ namespace VChatGUI {
 	private: System::Windows::Forms::TextBox^ VChatPort;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ VChatPath;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+
+
 
 
 
@@ -91,6 +102,10 @@ namespace VChatGUI {
 			this->VChatPort = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->VChatPath = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// Start_Button
@@ -98,9 +113,11 @@ namespace VChatGUI {
 			this->Start_Button->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->Start_Button->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->Start_Button->BackColor = System::Drawing::Color::DimGray;
-			this->Start_Button->Location = System::Drawing::Point(963, 637);
+			this->Start_Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Start_Button->Location = System::Drawing::Point(963, 616);
 			this->Start_Button->Name = L"Start_Button";
-			this->Start_Button->Size = System::Drawing::Size(185, 121);
+			this->Start_Button->Size = System::Drawing::Size(216, 121);
 			this->Start_Button->TabIndex = 0;
 			this->Start_Button->Text = L"Start-Server";
 			this->Start_Button->UseVisualStyleBackColor = false;
@@ -111,20 +128,24 @@ namespace VChatGUI {
 			this->VChatOut->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->VChatOut->BackColor = System::Drawing::SystemColors::MenuText;
+			this->VChatOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->VChatOut->ForeColor = System::Drawing::Color::ForestGreen;
-			this->VChatOut->Location = System::Drawing::Point(1, -7);
+			this->VChatOut->Location = System::Drawing::Point(-2, -1);
 			this->VChatOut->Multiline = true;
 			this->VChatOut->Name = L"VChatOut";
 			this->VChatOut->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->VChatOut->Size = System::Drawing::Size(1677, 402);
+			this->VChatOut->Size = System::Drawing::Size(1677, 611);
 			this->VChatOut->TabIndex = 2;
 			// 
 			// Stop_Button
 			// 
 			this->Stop_Button->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->Stop_Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->Stop_Button->Location = System::Drawing::Point(963, 771);
 			this->Stop_Button->Name = L"Stop_Button";
-			this->Stop_Button->Size = System::Drawing::Size(185, 118);
+			this->Stop_Button->Size = System::Drawing::Size(216, 118);
 			this->Stop_Button->TabIndex = 4;
 			this->Stop_Button->Text = L"Stop-Server";
 			this->Stop_Button->UseVisualStyleBackColor = true;
@@ -136,45 +157,88 @@ namespace VChatGUI {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->InputPortLabel->AutoSize = true;
-			this->InputPortLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->InputPortLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->InputPortLabel->Location = System::Drawing::Point(12, 819);
+			this->InputPortLabel->Location = System::Drawing::Point(12, 814);
 			this->InputPortLabel->Name = L"InputPortLabel";
-			this->InputPortLabel->Size = System::Drawing::Size(175, 37);
+			this->InputPortLabel->Size = System::Drawing::Size(160, 32);
 			this->InputPortLabel->TabIndex = 5;
-			this->InputPortLabel->Text = L"VChat Port";
+			this->InputPortLabel->Text = L"VChat Port:";
 			// 
 			// VChatPort
 			// 
-			this->VChatPort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->VChatPort->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->VChatPort->Location = System::Drawing::Point(401, 816);
+			this->VChatPort->Location = System::Drawing::Point(362, 811);
 			this->VChatPort->MaxLength = 6;
 			this->VChatPort->Name = L"VChatPort";
-			this->VChatPort->Size = System::Drawing::Size(108, 44);
+			this->VChatPort->Size = System::Drawing::Size(113, 39);
 			this->VChatPort->TabIndex = 9;
 			this->VChatPort->Text = L"9999";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 717);
+			this->label1->Location = System::Drawing::Point(12, 674);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(347, 37);
+			this->label1->Size = System::Drawing::Size(316, 32);
 			this->label1->TabIndex = 7;
-			this->label1->Text = L"VChat Executable Path";
+			this->label1->Text = L"VChat Executable Path:";
 			// 
 			// VChatPath
 			// 
-			this->VChatPath->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->VChatPath->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->VChatPath->Location = System::Drawing::Point(401, 714);
+			this->VChatPath->Location = System::Drawing::Point(362, 671);
 			this->VChatPath->Name = L"VChatPath";
-			this->VChatPath->Size = System::Drawing::Size(486, 44);
+			this->VChatPath->Size = System::Drawing::Size(525, 39);
 			this->VChatPath->TabIndex = 8;
 			this->VChatPath->Text = L"C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(1232, 671);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(290, 48);
+			this->label2->TabIndex = 10;
+			this->label2->Text = L"Server Status:";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(1232, 811);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(249, 48);
+			this->label3->TabIndex = 11;
+			this->label3->Text = L"Active Port: ";
+			// 
+			// textBox1
+			// 
+			this->textBox1->BackColor = System::Drawing::Color::Red;
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(1460, 649);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(178, 82);
+			this->textBox1->TabIndex = 12;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(1464, 811);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(150, 39);
+			this->textBox2->TabIndex = 13;
+			this->textBox2->Text = L"NULL";
 			// 
 			// VChatGUI
 			// 
@@ -183,6 +247,10 @@ namespace VChatGUI {
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->ClientSize = System::Drawing::Size(1677, 901);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->VChatPath);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->VChatPort);
@@ -222,7 +290,7 @@ namespace VChatGUI {
 					break;
 				}
 				System::String^ converted = gcnew System::String(buff);
-				Write_Text_Box_Block(converted);
+				Write_Text_Box_Block(srv_prompt, converted);
 				delete converted;
 			}
 		}
@@ -242,9 +310,9 @@ namespace VChatGUI {
 	* 
 	* @return: None
 	*/
-	private: System::Void Write_Text_Box_Block(System::String^ textBlock) {
+	private: System::Void Write_Text_Box_Block(System::String^ prepend, System::String^ textBlock) {
 		t_mutex->WaitOne();
-		this->VChatOut->AppendText(textBlock);
+		this->VChatOut->AppendText(prepend + textBlock);
 		t_mutex->ReleaseMutex();
 		return;
 	}
@@ -258,10 +326,10 @@ namespace VChatGUI {
 	* 
 	* @return: None
 	*/
-	private: System::Void Write_Text_Box_Timed(System::String^ textBlock) {
+	private: System::Void Write_Text_Box_Timed(System::String^ prepend, System::String^ textBlock) {
 		bool chk = 0;
 		chk = t_mutex->WaitOne(1000);
-		this->VChatOut->AppendText(textBlock);
+		this->VChatOut->AppendText(prepend + textBlock);
 		if(chk == 1)
 			t_mutex->ReleaseMutex();
 		return;
@@ -280,7 +348,6 @@ namespace VChatGUI {
 			portVal = msclr::interop::marshal_as<std::string>(VChatPort->Text);
 			if (portVal != this->serv_h->get_serverPort() &&
 				strtol(portVal.c_str(), &end, 10) != 0 && *end == '\0') {
-				std::cout << "Converted String" << portVal << "\n";
 				//this->serv_h->set_port(const_cast<char*>(msclr::interop::marshal_as<std::string>(VChatPort->Text).c_str()));
 				this->serv_h->set_port(portVal);
 			}
@@ -290,18 +357,18 @@ namespace VChatGUI {
 
 
 			// Notify Useer we are starting the server
-			this->Write_Text_Box_Block("Starting Server\r\n");
+			this->Write_Text_Box_Block(gui_prompt, "Starting Server\r\n");
 			//Hello_Label->Text = "Hello World 2";
 
 
 			if (this->serv_h->initPipes() == -1) {
-				this->VChatOut->AppendText("Failed to Create Unnamed Pipes\r\n");
+				this->Write_Text_Box_Block(gui_prompt, "Failed to Create Unnamed Pipes\r\n");
 				return;
 			}
 
 			// C:\\Local-Git\\VChatGUI\\SRC\\Test-Child\\x64\\Debug\\Test-Child.exe"
 			if (this->serv_h->CreateServerProcess(msclr::interop::marshal_as<std::string>(VChatPath->Text)) == -1) {
-				this->VChatOut->AppendText("Failed to Create Child Process\r\n");
+				this->Write_Text_Box_Block(gui_prompt, "Failed to Create Child Process\r\n");
 				return;
 			}
 
@@ -317,7 +384,6 @@ namespace VChatGUI {
 
 	/* Handler for stop button being clicked */
 	private: System::Void Stop_Button_Click(System::Object^ sender, System::EventArgs^ e) {
-			
 			// Only allow killing the server if it has been started. 
 			if (!this->serv_h->get_isStarted())
 				return;
@@ -331,11 +397,9 @@ namespace VChatGUI {
 
 
 			// Display that we are killing/killed the server 
-			this->Write_Text_Box_Timed("Killing Server\r\n");
+			this->Write_Text_Box_Timed(gui_prompt,"Killing Server\r\n");
 
-			// We kill out 
-			std::cout << "Killing Server" << "\n";
-
+			// Remove mutex
 			delete this->t_mutex;
 			return;
 
