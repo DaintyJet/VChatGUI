@@ -354,10 +354,13 @@ namespace VChatGUI {
 	*/
 	private: System::Void Write_Text_Box_Timed(System::String^ prepend, System::String^ textBlock) {
 		bool chk = 0;
-		chk = t_mutex->WaitOne(1000);
-		this->VChatOut->AppendText(prepend + textBlock);
-		if(chk == 1)
-			t_mutex->ReleaseMutex();
+		try {
+			chk = t_mutex->WaitOne(1000);
+			this->VChatOut->AppendText(prepend + textBlock);
+			if (chk == 1)
+				t_mutex->ReleaseMutex();
+		} 
+		catch (...) { }
 		return;
 	}
 

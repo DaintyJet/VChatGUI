@@ -177,6 +177,8 @@ int server_manage::ServerManager::serverRead(char *buffObj, DWORD size) {
 	if (this->g_hChildStd_OUT_Rd == NULL) 
 		return -1;
 
+	memset(buffObj, 0, size);
+
 	if (ReadFile(this->g_hChildStd_OUT_Rd, buffObj, size, &dwRead, NULL) == 0)
 		return -1;
 
