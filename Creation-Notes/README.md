@@ -189,18 +189,3 @@ An initial idea was to to use [events](https://stackoverflow.com/questions/12184
 We are required to use a special Mutex and Threading functions since the UI Class (MainWindow) is a [managed class](https://learn.microsoft.com/en-us/cpp/dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli?view=msvc-170) which means it is garbage collected and integrated with the .NET environment. They place additional restriction on what can be contained in these classes. This means we can only contained other managed objects or C Primitive types (including pointers). This means in order to contain the ServerManager Class, which is un managed we store a pointer to the object rather than the object itself. Additionally we use the [`System::Threading::Thread^`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread?view=net-8.0), and `System::Threading::Mutex^` managed objects rather than the `std::thread` and `std::mutex`.
 
 We kill the thread using the [interrupt](https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread.interrupt?view=net-8.0#system-threading-thread-interrupt) method, this allows it to exit from a wait state.
-
-
-## Server Manager Code
-https://learn.microsoft.com/en-us/windows/win32/procthread/creating-a-child-process-with-redirected-input-and-output?redirectedfrom=MSDN
-https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
-https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-formatmessage
-https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-process_information
-https://learn.microsoft.com/en-us/windows/win32/ipc/anonymous-pipe-operations
-
-
-Thread:
-https://learn.microsoft.com/en-us/dotnet/standard/threading/destroying-threads
-https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread?view=net-8.0
-## Ref: 
-Classic: https://stackoverflow.com/questions/12537456/how-to-append-text-to-a-textbox
